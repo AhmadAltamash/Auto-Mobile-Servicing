@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    background-color: #000;
+    color:#eee;
+}
+main{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.multiple-links{
+    position: absolute;
+    z-index: 99;
+    background: #00000059;
+    height: 20em;
+    width: max-content;
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 1em;
+    right: 11%;
+    top: 12%;
+}
+.multiple-links a{
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+.multiple-links .activated{
+    background: #ffffffd6;
+    color: #000;
+}
+.multiple-links a::before{
+    content: "";
+    position: absolute;
+    z-index: -90;
+    width: 0px;
+    height: 0px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.6s, height 0.6s;
+}
+.multiple-links a:hover::before{
+    width: 200px;
+    height: 200px;
+    background: #ffffffd6;
+}
+a:hover .activated{
+    background: transparent;
+    color: #fff;
+}
+.multiple-links a:hover{
+    color: #000;
+}
+
+#slider{
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient(
+        #8b8b8b, #1d252e
+    );
+    overflow-x: hidden;
+}
+#dCanvas{
+    height: 100vh;
+    cursor:grab;
+}
+.heading{
+    position: absolute;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding-top: 7em;
+    padding-left: 3em;
+}
+.contentOne{
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    top: 20%;
+    right: 5%;
+    padding: 50px;
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.contentTwoAction .contentTwo,
+.contentOneAction .contentOne{
+    opacity: 1;
+    pointer-events: urset;
+}
+.contentOne h1{
+    font-size: 3rem;
+    margin: 0 0 20px 0;
+    font-weight: bold;
+}
+.contentOne .desc{
+    opacity: 0.6;
+}
+.contentTwo{
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    bottom: 20%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    
+}
+.contentTwo ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.contentTwo ul li span:nth-child(1){
+    font-size: xxx-large;
+    font-weight: bold;
+    display: block;
+}
+@keyframes showli{
+    from{
+        opacity:0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.contentTwoAction .contentTwo ul li{
+    opacity:0;
+    transform: translateY(10px);
+    animation: showli 1s ease-in-out 1 forwards;
+}
+.contentTwoAction .contentTwo ul li:nth-child(1){
+    animation-delay: 0.5s!important;
+}
+.contentTwoAction .contentTwo ul li:nth-child(2){
+    animation-delay: 0.5s!important;
+}
+.contentTwoAction .contentTwo ul li:nth-child(3){
+    animation-delay: 0.5s!important;
+}
+.contentTwoAction .contentTwo ul li:nth-child(4){
+    animation-delay: 0.5s!important;
+}
+#showMore{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 80px;
+    color: #eee;
+    padding: 10px 20px;
+    border: 1px solid #eee;
+    width: max-content;
+    background: transparent;
+}
+
+@media screen and (max-width:760px) {
+    #dCanvas{
+        height: 40vh;
+    }
+    .heading{
+        display: none;
+    }
+    .contentOne, .contentTwo{
+        position: relative;
+        width: 90%;
+        height: auto;
+        opacity: 1!important;
+        text-align: center;
+        padding: 10px 0 0 5%;
+        top: unset;
+        left: unset;
+        right: unset;
+        bottom: unset;
+    }
+    .contentOne h1{
+        font-size: large;
+    }
+    .contentTwo ul li span:nth-child(1){
+        font-size: medium;
+    }
+    .contentTwo ul{
+        gap: 20px;
+    }
+    #slider #showMore{
+        display: none;
+    }
+}
