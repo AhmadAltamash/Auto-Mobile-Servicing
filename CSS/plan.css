@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+html,body{
+    height:100vh;
+    width:100%;
+}
+body{
+    background-image: radial-gradient(
+        #8b8b8b, #1d252e
+    ); 
+    font-family: "Space Grotesk";
+}
+nav{
+    position: absolute;
+    z-index: 99;
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 3vw;
+    
+}
+nav .logo{
+    height: 80px;
+    position: relative;
+}
+nav .logo img{
+    height: 100%;
+    object-fit: cover;
+}
+.parent-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    right: 0%;
+    height: max-content;
+    padding: 1.5vw 3vw;
+    color: #fff;
+}
+.parent-nav .icons .close{
+    display: none;
+}
+.parent-nav .icons i{
+    font-weight: 500;
+    font-size: 1.3em;
+    cursor: pointer;
+    border-radius: 50%;
+    height: max-content;
+    width: max-content;
+    padding: 0.5em;
+    margin: 0.5rem;
+    transition: background ease .5s;
+}
+.parent-nav .icons i:hover{
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+}
+.parent-nav .nav-content{
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    width: max-content;
+    transition: display ease 0.5s;
+    backdrop-filter: blur(5px);
+}
+.parent-nav .nav-content a{
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: none;
+    transition: display ease 0.5s;
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+    padding: 0.5em;
+    border-radius: 10px;
+    color: #fff;
+}
+.nav-content .activated{
+    background: #ffffffd6;
+    color: #000;
+}
+.nav-content a::before{
+    content: "";
+    position: absolute;
+    z-index: -90;
+    width: 0px;
+    height: 0px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.6s, height 0.6s;
+}
+.nav-content a:hover::before{
+    width: 200px;
+    height: 200px;
+    background: #ffffffd6;
+}
+a:hover .activated{
+    background: transparent;
+    color: #fff;
+}
+.nav-content a:hover{
+    color: #000;
+}
+
+.plans-card{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    color: #fff;
+    position: relative;
+    transition:all ease .5s;
+}
+.plan-heading{
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #ffffff;
+    padding: .5em;
+}
+.plan-heading h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight:bolder;
+    font-size: 1.5rem;
+}
+.plan-heading p{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight:bolder;
+    font-size: .7rem;
+}
+.plan-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+.plan-content h2{
+  font-weight: 100;
+    font-size: 3rem;
+}
+.plan-content>p{
+    opacity: 0.5;
+}
+.plan-content span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.plan-content span p{
+    font-size: 1.2rem;
+}
+.plan-content span p:nth-child(2){
+  font-weight: 900;
+    font-size: 3.2rem;
+}
+.plans-card:hover{
+    position: static;
+    transition:all ease .5s;
+}
+.plans-card:hover .silver{
+    transition:all ease .5s;
+    position: static;
+}
+.plans-card:hover .gold{
+    transition:all ease .5s;
+    left: 6%;
+    transform: rotate(0deg);
+}
+.plans-card:hover .platinum{
+    transition:all ease .5s;
+    right: 6%;
+    transform: rotate(0deg);
+}
+.silver{
+    position: absolute;
+    background: linear-gradient(to bottom,#858585, #4f4f4f 50%, #b3b3b3 50%);
+    width: 27em;
+    height: 69vh;
+    z-index: 3;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0px 5px 50px #000;
+}
+.silver:hover{
+  transition: all ease .5s;
+  transform: scale(1.15);
+}
+.platinum{
+    position: absolute;
+    background: linear-gradient(to bottom,#699ed4, #386ca0 50%, #52a5cc 50%);
+    width: 27em;
+    height: 69vh;
+    right: 22%;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 5px 0px 30px #000;
+    transform: rotate(10deg);
+    transition:all ease .5s;
+}
+.platinum:hover{
+  scale: 1.15;
+  z-index: 3;
+}
+.gold{
+  position: absolute;
+  background: linear-gradient(to bottom,#ffdd63, #e1b30a 50%,rgb(255, 241, 150)50%);
+  width: 27em;
+  height: 69vh;
+  left: 22%;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: -5px 0px 30px#000;
+  transform: rotate(-10deg);
+  transition:all ease .5s;
+}
+.gold:hover{
+  scale: 1.15;
+  z-index: 4;
+}
+.plans-card .details{
+  height: 15rem;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.details .list-details{
+  padding-top: 2.5rem;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.details .list-details ul{
+  padding: .5rem;
+}
+.details .list-details ul:nth-child(1){
+  border-right: 1px solid #fff;
+}
+.platinum .list-details{
+    padding-top: 3.2rem;
+}
+.platinum .list-details ul li{
+    font-size: .94rem;
+}
