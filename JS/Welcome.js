@@ -23,6 +23,7 @@ function search(){
     let details = document.querySelector(".search-filter input");
     let icon = document.querySelector(".search-filter i");
     const tableRows = document.querySelectorAll("tbody tr");
+    const tableHeading = document.querySelectorAll("thead th");
 
     icon.style.display = "none";
 
@@ -49,5 +50,24 @@ function search(){
     }
 }
 
+function profile(){
+    let showMore = document.querySelector(".nav-content .more");
+    let links = document.querySelector(".multiple-links");
+
+    showMore.addEventListener("mouseover", () => {
+        links.style.display = "flex";
+    });
+
+    links.addEventListener("mouseleave", () => {
+        links.style.display = "none";
+    });
+}
+
+let showCust = document.querySelector(".showCust").addEventListener("click",()=>{
+    let page2 = document.querySelector(".page2");
+    page2.style.display = "flex";
+})
+
+profile()
 search()
 navBar()

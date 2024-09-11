@@ -76,7 +76,6 @@ function cal(){
     }
 }
 
-
 function bgclick(){
     let nav = document.querySelectorAll(".nav-content a");
     nav.forEach(item=>{
@@ -89,16 +88,6 @@ function bgclick(){
     })
 }
 
-function pageShow(){
-    let show = document.querySelector(".history");
-    let page = document.querySelector(".page2");
-
-    show.addEventListener("click",()=>{
-        page.style.display = "block";
-    })
-}
-
-pageShow()
 bgclick()
 cal()
 formdisplay()

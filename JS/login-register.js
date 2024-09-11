@@ -18,21 +18,25 @@ close.addEventListener("click", ()=>{
 })
 }
 
-function display(){
-    let loginPage = document.querySelector(".container-login")
-    let rsgtrPageOpen = document.querySelector(".register")
-    let rsgtrPage = document.querySelector(".container-register")
-    let lognOpen = document.querySelector(".login")
+function display() {
+    let loginPage = document.querySelector(".container-login");
+    let rsgtrPageOpen = document.querySelector(".register");
+    let rsgtrPage = document.querySelector(".container-register");
+    let lognOpen = document.querySelector(".login");
     
-    rsgtrPageOpen.addEventListener("click", ()=>{
-        loginPage.style.display = "none"
-        rsgtrPage.style.display = "block"
-    })
-    lognOpen.addEventListener("click", ()=>{
-        loginPage.style.display = "block"
-        rsgtrPage.style.display = "none"
-    })
+    rsgtrPageOpen.addEventListener("click", () => {
+        
+        loginPage.style.transform = "translateX(-100%)";
+        rsgtrPage.style.transform = "translateX(0%)";
+    });
+
+    lognOpen.addEventListener("click", () => {
+      
+        loginPage.style.transform = "translateX(0%)";
+        rsgtrPage.style.transform = "translateX(100%)";
+    });
 }
+
 
 function passwordViewer1(){
     let password = document.getElementById("password");
