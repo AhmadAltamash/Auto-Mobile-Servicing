@@ -86,7 +86,7 @@
                                     } else if (rs.getInt("service_status") == 2) {
                                         out.println("<span class='checked-in'>Checked-In</span>");
                                     } else if (rs.getInt("service_status") == 3) {
-                                        out.println("<span class='checked-out'>Checked-out</span>");
+                                        out.println("<span class='checked-out'>Completed</span>");
                                     } else if (rs.getInt("service_status") == 4) {
                                         out.println("<span class='cancelled'>Cancelled</span>");
                                     }

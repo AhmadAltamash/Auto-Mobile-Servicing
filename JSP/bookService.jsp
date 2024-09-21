@@ -2,10 +2,11 @@
 <%@include file="connect.jsp" %>
 <%
     String firstname=(String)session.getAttribute("f_name");
+    String lastname=(String)session.getAttribute("l_name");
+    String mobile=(String)session.getAttribute("mob");
     String Cid=(String)session.getAttribute("rid");
     if (firstname !=null){
         int sidFetch=Integer.parseInt(request.getParameter("bid"));
-        int ridFetch=Integer.parseInt(Cid);
         stmt=con.createStatement();
         rs=stmt.executeQuery("select * from services_plans where sid='"+sidFetch+"'");
         rs.next();
@@ -66,6 +67,14 @@
                         </label>
                     </div>  
 
+                    <label>
+                        <input required="" class="input" name="cname" type="text" readonly value='<% out.println(firstname+" "+lastname);%>'>
+                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Customer Name</span>
+                    </label>
+                    <label>
+                        <input required="" class="input" name="contact" type="text" readonly value='<% out.println(mobile);%>'>
+                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Contact No.</span>
+                    </label>
                     <label>
                         <input required="" class="input" name="sname" type="text" readonly value='<% out.println(rs.getString("serv_name"));%>'>
                         <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Service Name</span>

@@ -40,7 +40,7 @@
                 <a href="Services.jsp">Services</a>
                 <a href="myBookings.jsp">My Bookings</a>
                 <a href="">Plan Member</a>
-                <a href="">Billing</a>
+                <a href="billing.jsp">Billing</a>
             </div>
 
             <div id="slider" class="contentOneAction">

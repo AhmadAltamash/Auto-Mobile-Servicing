@@ -38,6 +38,7 @@
 <%
     if(action.equals("login")){
         String mobile,password, firstname = "";
+        String lastname = "";
 
         mobile = request.getParameter("mobile");
         password = request.getParameter("password");
@@ -48,7 +49,10 @@
             if(rs.next()){
                 msg="Login Successfull";
                 firstname=rs.getString("f_name");
+                lastname=rs.getString("l_name");
                 session.setAttribute("f_name",firstname);
+                session.setAttribute("l_name",lastname);
+                session.setAttribute("mob",mobile);
                 session.setAttribute("rid",String.valueOf(rs.getInt("rid")));
                 response.sendRedirect("welcomeuser.jsp?msg="+msg);
             }
@@ -254,10 +258,12 @@
 <%-- book Services --%>
 <%
     if(action.equals("bookservice")){
-        String sid,cid,servname,servprice,dob,bookday,timetodel,timeofbook,servstatus;
+        String sid,cid,custname,contact,servname,servprice,dob,bookday,timetodel,timeofbook,servstatus;
         
         sid = request.getParameter("sid");
         cid = request.getParameter("rid");
+        custname = request.getParameter("cname");
+        contact = request.getParameter("contact");
         servname = request.getParameter("sname");
         servprice = request.getParameter("sprice");
         dob = request.getParameter("date");
@@ -266,7 +272,7 @@
         timeofbook = request.getParameter("currentTime");
         try{
             stmt = con.createStatement();
-            stmt.execute("insert into booking(serv_id,cust_id,serv_name,serv_price,date_of_booking,book_day,time_to_deliver,time_of_booking) values('"+sid+"','"+cid+"','"+servname+"','"+servprice+"','"+dob+"','"+bookday+"','"+timetodel+"','"+timeofbook+"')");
+            stmt.execute("insert into booking(serv_id,cust_id,cust_name,contact,serv_name,serv_price,date_of_booking,book_day,time_to_deliver,time_of_booking) values('"+sid+"','"+cid+"','"+custname+"','"+contact+"','"+servname+"','"+servprice+"','"+dob+"','"+bookday+"','"+timetodel+"','"+timeofbook+"')");
             msg="Save Sucessfully";
             response.sendRedirect("Services.jsp?bid="+sid+"&msg="+msg);
         
@@ -336,4 +342,26 @@
         }
     }
 %>
+<%-- Getting reviews --%>
+<%
+    if(action.equals("review")){
+        String email, message;
 
+        email = request.getParameter("email");
+        message = request.getParameter("message");
+        try{
+            stmt = con.createStatement();
+            stmt.execute("insert into reviews(email,message) values('"+email+"','"+message+"')");
+            msg="Message Sent";
+            response.sendRedirect("../index.jsp?msg="+msg);
+        }
+        catch(Exception e){
+            
+            msg="Message Not Sent"+e.toString();
+        }    
+        finally{
+            con.close();
+        }
+
+    }
+%>
