@@ -10,17 +10,18 @@
 <%-- Reisgtering Users --%>
 <%
     if(action.equals("register")){
-        String f_name,l_name,email,mobile,password;
+        String f_name,l_name,email,mobile,question,password;
 
         f_name = request.getParameter("fname");
         l_name = request.getParameter("lname");
         email = request.getParameter("email");
         mobile = request.getParameter("mob");
+        question = request.getParameter("query");
         password = request.getParameter("password");
         
         try{
             stmt = con.createStatement();
-            stmt.execute("insert into register(f_name,l_name,email,mob,pass) values('"+f_name+"','"+l_name+"','"+email+"','"+mobile+"','"+password+"')");
+            stmt.execute("insert into register(f_name,l_name,email,mob,question,pass) values('"+f_name+"','"+l_name+"','"+email+"','"+mobile+"','"+question+"','"+password+"')");
             msg="Registration Successfull";
             response.sendRedirect("login_register.jsp?msg="+msg);
         }
@@ -33,7 +34,65 @@
         }
     }
 %>
+<%-- Validating Question --%>
+<%
+    if(action.equals("validateQuery")){
+        String mobile,question;
 
+        mobile = request.getParameter("mobile");
+        question = request.getParameter("query");
+        
+        try{
+            stmt = con.createStatement();
+            String query = "SELECT * FROM register WHERE mob='" + mobile + "' AND question='" + question + "'";
+            rs = stmt.executeQuery(query);
+            if(rs.next()){
+                    if(mobile.equals(rs.getString("mob")) && question.equals(rs.getString("question"))){
+                    session.setAttribute("mob",mobile);
+                    msg="Validated Query Successfull";
+                    response.sendRedirect("changePass.jsp?msg="+msg);
+                }
+                else{
+                    msg="Invalid Query";
+                    response.sendRedirect("forgotPass.jsp?msg="+msg);
+                }
+            }
+            else{
+                msg="Invalid Query";
+                response.sendRedirect("forgotPass.jsp?msg="+msg);
+            }    
+        }
+        catch(Exception e){
+            
+            msg="Registration Failed"+e.toString();
+        }    
+        finally{
+            con.close();
+        }
+    }
+%>
+<%-- Update Password --%>
+<%
+    if(action.equals("changePassword")){
+        String mobile,newpass;
+        mobile = request.getParameter("mobile");
+        newpass = request.getParameter("password");
+
+        try{
+            stmt = con.createStatement();
+            stmt.execute("update register set pass = '"+newpass+"' where mob = '"+mobile+"'");
+            msg="Password Changed Successfully";
+            response.sendRedirect("login_register.jsp?msg="+msg);
+        }
+        catch(Exception e){
+            
+            msg="Password could not be Changed"+e.toString();
+        }    
+        finally{
+            con.close();
+        }
+    }
+%>
 <%-- Login Authentication of Users --%>
 <%
     if(action.equals("login")){
@@ -274,7 +333,7 @@
             stmt = con.createStatement();
             stmt.execute("insert into booking(serv_id,cust_id,cust_name,contact,serv_name,serv_price,date_of_booking,book_day,time_to_deliver,time_of_booking) values('"+sid+"','"+cid+"','"+custname+"','"+contact+"','"+servname+"','"+servprice+"','"+dob+"','"+bookday+"','"+timetodel+"','"+timeofbook+"')");
             msg="Save Sucessfully";
-            response.sendRedirect("Services.jsp?bid="+sid+"&msg="+msg);
+            response.sendRedirect("bookService.jsp?bid="+sid+"&msg="+msg);
         
         }
         catch(Exception e){
@@ -323,6 +382,26 @@
         }
     }
 %>
+<%-- Generating Invoice --%>
+<%
+    if(action.equals("generateInvoice")){
+        int bidInvoice = Integer.parseInt(request.getParameter("id"));
+        try{
+            stmt = con.createStatement();
+            stmt.execute("update booking set service_status=5 where booking_id='"+bidInvoice+"'");
+            msg="Generated Sucessfully";
+            response.sendRedirect("../admin/billing.jsp?msg="+msg);
+        }
+        catch(Exception e){
+            
+            msg="Registration Failed"+e.toString();
+        }    
+        finally{
+            con.close();
+        }
+    }
+%>
+
 <%-- Cancel booking --%>
 <%
     if(action.equals("cancelbooking")){
@@ -357,6 +436,51 @@
         }
         catch(Exception e){
             
+            msg="Message Not Sent"+e.toString();
+        }    
+        finally{
+            con.close();
+        }
+
+    }
+%>
+<%-- New Bill No. --%>
+<%
+    if(action.equals("newbill")){
+        int billno=Integer.parseInt(request.getParameter("billno"));
+            try{
+            stmt = con.createStatement();
+            stmt.execute("update counter set billno='"+billno+"'");
+            response.sendRedirect("../admin/billing.jsp?msg="+msg);
+        }
+        catch(Exception e){
+            
+            msg="Message Not Sent"+e.toString();
+        }    
+        finally{
+            con.close();
+        }
+
+    }
+%>
+<%-- Invoice Generating --%>
+<%
+    if(action.equals("invoice")){
+        int billno,custID;
+        String billdate,servname,servcharge;
+
+        billno = Integer.parseInt(request.getParameter("billNo"));
+        custID = Integer.parseInt(request.getParameter("custId"));
+        billdate = request.getParameter("currDate");
+        servname = request.getParameter("sname");
+        servcharge = request.getParameter("scharge");
+        try{
+            stmt = con.createStatement();
+            stmt.execute("insert into billing(billno,cust_id,billdate,serv_name,serv_charge) values('"+billno+"','"+custID+"','"+billdate+"','"+servname+"','"+servcharge+"')");
+            msg="Bill Generated";
+            response.sendRedirect("../admin/billing.jsp?msg="+msg);
+        }
+        catch(Exception e){
             msg="Message Not Sent"+e.toString();
         }    
         finally{

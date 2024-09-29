@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../CSS/admin.css">
     <link rel="stylesheet" href="../CSS/user.css">
     <title>
-        Book For A Service
+        Invoice & Bills
     </title>
 </head>
 
@@ -42,7 +42,7 @@
         </div>
 
     <main class="main">
-        <div id="parent">
+            <div id="parent">
                 
                 <div class="customer-details">
                     <div class="table-heading">
@@ -53,52 +53,28 @@
                             <thead>
                                 <tr>
                                     <th>Sr.No.</th>
+                                    <th>Bill No.</th>
                                     <th>Service Name</th>
                                     <th>Service Price</th>
                                     <th>Date of Booking</th>
-                                    <th>Booking Day</th>
-                                    <th>Time To Deliver</th>
-                                    <th>Time Of Booking</th>
-                                    <th>Service Status</th>
-                                    <th>Cancel</th>
+                                    <th>Invoice</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <%
                                 int sr=0;
                                 stmt=con.createStatement();
-                                rs=stmt.executeQuery("SELECT * from booking where cust_id='"+Cid+"' ORDER BY booking_id DESC");
+                                rs=stmt.executeQuery("SELECT * from billing where cust_id='"+Cid+"' ORDER BY billsr DESC");
                                 while(rs.next()){
                                     sr++;
                                 %>
                                 <tr>
                                     <td><%= sr %></td>
+                                    <td><%= rs.getString("billno") %></td>
                                     <td><%= rs.getString("serv_name") %></td>
-                                    <td><%= rs.getString("serv_price") %></td>
-                                    <td><%= rs.getString("date_of_booking") %></td>
-                                    <td><%= rs.getString("book_day") %></td>
-                                    <td><%= rs.getString("time_to_deliver") %></td>
-                                    <td><%= rs.getString("time_of_booking") %></td>
-                                    <td>
-                                    <%
-                                    if (rs.getInt("service_status") == 1) {
-                                        out.println("<span class='booked'>Booked</span>");
-                                    } else if (rs.getInt("service_status") == 2) {
-                                        out.println("<span class='checked-in'>Checked-In</span>");
-                                    } else if (rs.getInt("service_status") == 3) {
-                                        out.println("<span class='checked-out'>Service Done</span>");
-                                    } else if (rs.getInt("service_status") == 4) {
-                                        out.println("<span class='cancelled'>Cancelled</span>");
-                                    } else if (rs.getInt("service_status") == 5) {
-                                        out.println("<span class='checked-out'>Completed</span>");
-                                    }
-                                    %>
-                                    </td>
-                                    <td>
-                                    <% if ((rs.getInt("service_status") != 2) && (rs.getInt("service_status") != 3) && (rs.getInt("service_status") != 4) && (rs.getInt("service_status") != 5)) {%>
-                                        <a href='../JSP/action.jsp?id=<%= rs.getInt("booking_id") %>&action=cancelbooking'><button class='btn-chk-in'>Cancel</button></a>
-                                    <% }%>
-                                    </td>
+                                    <td><%= rs.getString("serv_charge") %></td>
+                                    <td><%= rs.getString("billdate") %></td>
+                                    <td><a href='invoice.jsp?billno=<%= rs.getInt("billno") %>'><button class='btn-chk-in'>Download Invoice</button></a></td>
                                 </tr> 
                                 <%
                                 }
@@ -107,9 +83,10 @@
                         </table>
                     </section>
                 </div>
-        </div>
+
+            </div>
     </main>
-       
+
     <!-- Script -->
     <script src="../JS/user.js"></script>
 </body> 

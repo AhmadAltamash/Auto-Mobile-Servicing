@@ -40,13 +40,13 @@
                 <a href="Services.jsp">Services</a>
                 <a href="myBookings.jsp">My Bookings</a>
                 <a href="">Plan Member</a>
-                <a href="billing.jsp">Billing</a>
+                <a href="bill.jsp">Billing</a>
             </div>
 
             <div id="slider" class="contentOneAction">
 
                 <div class="heading">
-                    <h1>Welcome Mr. <%= firstname %></h1>
+                    <h1>Welcome <%= firstname %></h1>
                 </div>
 
                 <div id="dCanvas">

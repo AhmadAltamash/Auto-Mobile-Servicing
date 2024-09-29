@@ -60,7 +60,11 @@
                             <i class="ri-eye-fill open"></i>
                             <i class="ri-eye-off-fill close2"></i>
                         </div>
-        
+
+                        <div class="acc-text">
+                            <a href="forgotPass.jsp">Forgot Password?</a>
+                        </div>
+
                         <div class="btn-container">
                             <button class="btn" type="submit">Log In</button>
                             <div class="acc-text">
@@ -97,6 +101,11 @@
                         <label>
                             <input required="" placeholder="" type="text" class="input" name="mob">
                             <span>Mobile No.</span>
+                        </label>
+
+                        <label>
+                            <input required="" placeholder="" type="text" class="input" name="query">
+                            <span>What is your Nickname?</span>
                         </label>
                             
                         <label id="password-container">

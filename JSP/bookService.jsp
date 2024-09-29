@@ -47,7 +47,7 @@
         </div>
 
     <main class="main">
-            <div id="parent">
+        <div id="parentBooking">
                 <div class="bookServices container-register">
 
                     <form class="form" method="post" action="../JSP/action.jsp">
@@ -115,18 +115,24 @@
                     </label>
 
                     
-                    <button class="submit" type="submit">Book</button>
+                    <button class="submit" type="submit" id="submit" style="cursor:pointer">Book</button>
                     
                     </form>
                 </div>
+        </div>
+
+        <div class="notify" id="notification">
+            <div class="check">
+                <i class="ri-check-fill"></i>
             </div>
+            <div class="msg">
+                <p>Your Service Has Been Booked</p>
+                <p>Go To My Bookings For Further Details</p>
+                <p>Token: #<% out.print(rs.getString("sid"));%><% out.print(Cid);%><span class="insertDate"></span></p>
+            </div>
+        </div>
+
     </main>
-        <%
-       if(request.getParameter("msg")!= null)
-       {
-        out.println("<p>"+ request.getParameter("msg")+"</p>");
-       }
-       %>
 
     <!-- Script -->
     <script src="../JS/bookService.js"></script>
