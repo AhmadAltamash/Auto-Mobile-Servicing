@@ -44,12 +44,12 @@
 
     <main class="main">
 
-        <div id="parent">
+        <div id="Edit">
                 <div class="editServices container-register">
 
                     <form class="form" method="post" action="../JSP/action.jsp">
                     <input type="hidden" name="action" value="editplan">
-                    <p class="title">Edit Services</p>
+                    <p class="title">Edit Plans</p>
                     
                     <label>
                         <input required="" placeholder="" type="text" readonly class="input" name="sid" id="sid" value= '<% out.println(rs.getInt("pid"));%>'> 
@@ -69,11 +69,11 @@
 
                     <label>
                         <input required="" type="date" class="input" name="valid_date" value="<% out.println(rs.getString("valid_from_date"));%>">
-                        <span>Valid From Date</span>
+                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid From Date</span>
                     </label>
                     <label>
                         <input required="" type="date" class="input" name="to_date" value="<% out.println(rs.getString("valid_to_date"));%>">
-                        <span>Valid To Date</span>
+                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid To Date</span>
                     </label>
 
                     <label>

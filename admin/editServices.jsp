@@ -44,7 +44,7 @@
 
     <main class="main">
 
-        <div id="parent">
+        <div id="Edit">
                 <div class="editServices container-register">
 
                     <form class="form" method="post" action="../JSP/action.jsp">

@@ -12,7 +12,6 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
-    <link rel="stylesheet" href="../CSS/login-register.css">
 
     <title>TorqueMaster Garage - A place where we ensure your vehicles value</title>
 </head>
@@ -23,9 +22,7 @@
         <div class="parent-nav">            
             <div class="nav-content">
                 <a href="welcomeadmin.jsp">home</a>
-                <a href="addServices.jsp" class="activated">Add Services</a>
-                <a href="addPlans.jsp">Add Plans</a>
-                <a href="#history" class="history">Services History</a>
+                <a class="more" href="#">More</a>
                 <a href="logout.jsp" target="_self">Logout</a>
             </div>
             <span class="icons">
@@ -36,8 +33,14 @@
 
     <%@include file="../JSP/connect.jsp" %>
         <main>
-            <div class="page1">
-
+            <div class="multiple-links" style="top:9%; height:20em;">
+                <a href="addPlans.jsp">Add Plans</a>
+                <a href="addServices.jsp" class="activated">Add Services</a>
+                <a href="bookings.jsp" class="showBooking">Bookings</a>
+                <a href="billing.jsp">Billing</a>
+                <a href="servicesHistory.jsp">Services History</a>
+            </div>
+            <div class="addService">
                 <div class="customer-details">
                     <div class="table-heading">
                         <h3>Our Services</h3>
@@ -95,7 +98,7 @@
                 </div>
 
 
-                <div class="addPlansForm container-register">
+                <div class="addPlansForm">
 
                     <form class="form" action="../JSP/action.jsp">
                     <input type="hidden" name="action" value="addservices">
@@ -125,59 +128,8 @@
                     <button class="submit" type="submit" value="add">Add</button>
                     
                     </form>
-
                 </div>
-
             </div>
-
-            <div class="page2"> 
-
-                <div id="history">
-                    <div class="customer-details">
-                        <div class="table-heading">
-                            <h3>Our Services</h3>
-                            <div class="search-filter">
-                                <input type="search" placeholder="Search Details">
-                                <i class="ri-close-line"></i>
-                            </div>
-                        </div>
-                        <section class="table-body">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Service ID</th>
-                                        <th>Service Name</th>
-                                        <th>Service Charge</th>
-                                        <th>Contact</th>
-                                        <th>Location</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <%
-                                    int sr1=0;
-                                    stmt=con.createStatement();
-                                    rs=stmt.executeQuery("select * from services_history order by sid desc");
-                                    while(rs.next()){
-                                        sr1++;
-                                    %>
-                                    <tr>
-                                        <td><%= sr1 %></td>
-                                        <td><%= rs.getString("serv_name") %></td>
-                                        <td><%= rs.getString("serv_charge") %></td>
-                                        <td><%= rs.getString("contact_person") %></td>
-                                        <td><%= rs.getString("location") %></td>
-                                    </tr> 
-                                    <%
-                                    }
-                                    %>
-                                </tbody>
-                            </table>
-                        </section>
-                    </div>
-                </div>
-
-            </div>
-            
         </main>
        
     <!-- Script -->

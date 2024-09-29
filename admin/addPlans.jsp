@@ -12,7 +12,6 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
-    <link rel="stylesheet" href="../CSS/login-register.css">
 
 
     <title>TorqueMaster Garage - A place where we ensure your vehicles value</title>
@@ -24,9 +23,7 @@
         <div class="parent-nav">            
             <div class="nav-content">
                 <a href="welcomeadmin.jsp">home</a>
-                <a href="addServices.jsp">Add Services</a>
-                <a href="addPlans.jsp" class="activated">Add Plans</a>
-                <a href="../JSP/Services.jsp">Services History</a>
+                <a class="more" href="#">More</a>
                 <a href="logout.jsp" target="_self">Logout</a>
             </div>
             <span class="icons">
@@ -37,11 +34,19 @@
 
     <%@include file="../JSP/connect.jsp" %>
         <main>
-            <div class="page1">
+            <div class="multiple-links" style="top:17%; height:20em;">
+                <a href="addPlans.jsp" class="activated">Add Plans</a>
+                <a href="addServices.jsp">Add Services</a>
+                <a href="bookings.jsp" class="showBooking">Bookings</a>
+                <a href="billing.jsp">Billing</a>
+                <a href="servicesHistory.jsp">Services History</a>
+            </div>
+
+            <div class="addPage">
 
                 <div class="customer-details">
                     <div class="table-heading">
-                        <h3>Customer's details</h3>
+                        <h3>Plan Details</h3>
                         <div class="search-filter">
                             <input type="search" placeholder="Search Details">
                             <i class="ri-close-line"></i>
@@ -93,7 +98,7 @@
                     </section>
                 </div>
 
-                <div class="addPlansForm container-register">
+                <div class="addPlansForm">
 
                     <form class="form" action="../JSP/action.jsp">
                     <input type="hidden" name="action" value="addplans">
@@ -113,11 +118,11 @@
 
                     <label>
                         <input required="" placeholder="none" type="date" class="input" name="valid_date">
-                        <span>Valid From Date</span>
+                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid From Date</span>
                     </label>
                     <label>
                         <input required="" placeholder="" type="date" class="input" name="to_date" >
-                        <span>Valid To Date</span>
+                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid To Date</span>
                     </label>
                     
                     <label>
@@ -134,10 +139,6 @@
                     </form>
 
                 </div>
-
-            </div>
-
-            <div class="page2">
 
             </div>
             

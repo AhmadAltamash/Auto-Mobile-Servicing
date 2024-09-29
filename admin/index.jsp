@@ -22,7 +22,7 @@
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
-                <a href="../index.html">home</a>
+                <a href="../index.jsp">home</a>
                 <a href="index.jsp" target="_blank" class="activated">Admin Login</a>
             </div>
             <span class="icons">
