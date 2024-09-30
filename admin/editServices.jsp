@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
     <title>
-        TorqueMaster Garage — A place where we ensure your vehicles value
+        Edit Services
     </title>
 </head>
 
@@ -106,7 +106,7 @@
         if (!isNaN(chargeValue) && !isNaN(discountValue)) {
             total.value = chargeValue - (chargeValue * (discountValue / 100));
         } else {
-            total.value = ""; // Clear the total if inputs are invalid
+            total.value = "";
         }
         }
         }

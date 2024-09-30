@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/login-register.css">
     <title>
-        TorqueMaster Garage — A place where we ensure your vehicles value
+        Admin's Login
     </title>
 </head>
 
@@ -55,8 +55,12 @@
                     </div>
                 </form>
             </div>
-
-
+        </div>
+        
+        <div class="demoId">
+            <p>Mobile No: 968523522</p>
+            <p>Password: 123</p>
+        </div>
     </main>
 
 

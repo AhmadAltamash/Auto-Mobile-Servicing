@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
 
-    <title>TorqueMaster Garage - A place where we ensure your vehicles value</title>
+    <title>Add, Edit or Remove Services</title>
 </head>
 <body>
         <nav>
@@ -33,12 +33,12 @@
 
     <%@include file="../JSP/connect.jsp" %>
         <main>
-            <div class="multiple-links" style="top:9%; height:20em;">
+            <div class="multiple-links" style="height:20em; right:10%;">
                 <a href="addPlans.jsp">Add Plans</a>
                 <a href="addServices.jsp" class="activated">Add Services</a>
                 <a href="bookings.jsp" class="showBooking">Bookings</a>
                 <a href="billing.jsp">Billing</a>
-                <a href="servicesHistory.jsp">Services History</a>
+                <a href="Customers.jsp">Customer's Details</a>
             </div>
             <div class="addService">
                 <div class="customer-details">

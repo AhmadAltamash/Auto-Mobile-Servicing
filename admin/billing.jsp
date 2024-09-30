@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
     <title>
-        Bookings
+        Make & Print Bills
     </title>
 </head>
 
@@ -44,12 +44,13 @@
 
     <main class="main">
         
-        <div class="multiple-links" style="top:5%; height:20em;">
+        <div class="multiple-links" style="height:23em; right:10%">
             <a href="addPlans.jsp">Add Plans</a>
             <a href="addServices.jsp">Add Services</a>
             <a href="bookings.jsp" class="showBooking">Bookings</a>
             <a href="billing.jsp" class="activated">Billing</a>
-            <a href="servicesHistory.jsp">Services History</a>
+            <a href="#bills">Bills</a>
+            <a href="Customers.jsp">Customer's Details</a>
         </div>
 
         <div class="billGenerate">
@@ -71,8 +72,8 @@
                       </div>  
                       
                       <label>
-                          <input required="" placeholder="" type="text" class="input"name="currDate">
-                          <span>Bill Date</span>
+                          <input required="" placeholder="" type="date" class="input"name="currDate">
+                          <span style="top:30px;font-size: 0.7em;font-weight: 600;">Bill Date</span>
                       </label> 
 
                       <label>
@@ -185,23 +186,39 @@
                             </thead>
                             <tbody>
                                 <%
-                                int sr=0;
-                                stmt=con.createStatement();
+                                int sr = 0;
+                                int lastBillNo = -1; 
+                                stmt = con.createStatement();
                                 rs=stmt.executeQuery("SELECT * from billing ORDER BY billsr DESC");
-                                while(rs.next()){
-                                    sr++;
+                                while (rs.next()) {
+                                    int currentBillNo = rs.getInt("billno");
+                                    if (currentBillNo != lastBillNo) {
+                                        sr++;
                                 %>
                                 <tr>
                                     <td><%= sr %></td>
-                                    <td><%= rs.getString("billno") %></td>
+                                    <td><%= currentBillNo %></td>
                                     <td><%= rs.getString("cust_id") %></td>
                                     <td><%= rs.getString("serv_name") %></td>
                                     <td><%= rs.getString("serv_charge") %></td>
                                     <td><%= rs.getString("billdate") %></td>
-                                    <td><a href='../JSP/action.jsp'>
-                                    <button class='btn-chk-in'>Download Invoice</button></a></td>
+                                    <td><a href='invoicePrint.jsp?billno=<%= rs.getInt("billno")%>&custID=<%= rs.getInt("cust_id")%>'><button class='btn-chk-in'>Print Invoice</button></a></td>
                                 </tr> 
                                 <%
+                                    lastBillNo = currentBillNo;
+                                } else {
+                                %>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><%= rs.getString("serv_name") %></td>
+                                    <td><%= rs.getString("serv_charge") %></td>
+                                    <td><%= rs.getString("billdate") %></td>
+                                    <td></td>
+                                </tr>
+                                <%
+                                    }
                                 }
                                 %>
                             </tbody>
