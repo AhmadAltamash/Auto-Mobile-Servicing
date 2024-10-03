@@ -5,7 +5,18 @@ function formdisplay(){
         display.style.display = "block";
     })
 }
+function profile(){
+    let showMore = document.querySelector(".nav-content .more");
+    let links = document.querySelector(".multiple-links");
 
+    showMore.addEventListener("mouseover", () => {
+        links.style.display = "flex";
+    });
+
+    links.addEventListener("mouseleave", () => {
+        links.style.display = "none";
+    });
+}
 function navBar(){
     let menu = document.querySelector(".menu")
 let close = document.querySelector(".close")
@@ -74,6 +85,7 @@ function cal(){
         }
     }
 }
+profile()
 cal()
 formdisplay()
 search()

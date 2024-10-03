@@ -18,6 +18,7 @@ body{
         #8b8b8b, #1d252e
     ); 
     font-family: "Space Grotesk";
+    overflow-x: hidden;
 }
 body::-webkit-scrollbar{
     width: 8px;
@@ -535,12 +536,21 @@ a:hover .activated{
     display: flex;
     align-items: center;
 }
-#contact-inner span i{
+#contact-inner span a{
+   text-decoration: none;
+}
+#contact-inner span a i{
     margin-right: 1vw;
     padding: 0.5em;
     font-size: 1.2em;
     border-radius: 50%;
     background: #000;
+    transition: all ease .4s;
+}
+#contact-inner span a i:hover{
+    cursor: pointer;
+    scale: 1.5;
+    box-shadow: 0rem .5rem .8rem #3f3f3f;
 }
 #page4 .contact-img{
     padding: 5vw 3vw;
@@ -551,4 +561,157 @@ a:hover .activated{
 }
 #page4 .contact-img img{
     height: 35em;
+}
+.logo-sliding{
+    background: #fff;
+    width: 100vw;
+    height: 35vh;
+    padding: 0em 3em 2em 3em;
+    overflow: hidden;
+}
+.logo-sliding:hover .items{
+    animation-play-state: paused!important;
+}
+.logo-sliding h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #000000;
+}
+.logo-sliding .list-sliding{
+    mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-width: calc(var(--width) * 11);
+    overflow: hidden;
+}
+@keyframes slide {
+    from{
+        left: 100%;
+    }
+    to{
+        left: calc(var(--width) * -1);
+    }
+}
+.logo-sliding .list-sliding .items{
+    position: absolute;
+    width: var(--width);
+    left: 100%;
+    animation: slide 7s linear infinite;
+    animation-delay: calc(7s / 11 * var(--position));
+}
+.logo-sliding .list-sliding .items img{
+    width: 100%;
+}
+footer{
+    position: relative;
+    background-image: radial-gradient(
+        #505050, #14181e
+    ); 
+    height: 52vh;
+    padding: 2em 3em;
+    display:flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+}
+footer .left-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+}
+footer .left-footer .title{
+    width: 50%;
+}
+footer .left-footer .title h4{
+    font-size: 2.5rem;
+}
+footer .left-footer .review h3{
+    opacity: .7;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: .8rem;
+}
+footer .left-footer .review form{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+footer .left-footer .review form .input-email{
+    width: 20rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    padding: .3rem .2rem;
+    font-size: 1.2rem;
+}
+footer .left-footer .review form .input-text{
+    margin-top: 1rem;
+    width: 25rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    padding: 0rem .2rem 3.5rem .2rem;
+    font-size: 1.2rem;
+}
+footer .left-footer .review form .btn{
+    width: max-content;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #0d1216 0%, #233944  51%, #040607  100%);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    border: none;
+    font-weight: 900;
+}
+footer .right-footer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+footer .right-footer .content-right-footer p{
+    opacity: .9;
+    font-size: 1.2rem;
+}
+footer .right-footer .content-right-footer span{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .5rem;
+}
+footer .right-footer .content-right-footer span i{
+    padding: .5rem;
+    background: #000;
+    border-radius: 50%;
+    transition: all ease .4s;
+}
+.content-right-footer span i:hover{
+    scale: 1.5;
+    box-shadow: 0rem .5rem .8rem #3f3f3f;
+}
+.social-links .social{
+    display: flex;
+    gap: 4.5rem;
+}
+.social-links .social a{
+    text-decoration: none;
+    transition: all ease .4s;
+}
+.social-links .social a:hover{
+    scale: .8;
+}
+.social-links .social a i{
+    padding: .5rem;
+    background: #000;
+    border-radius: 50%;
+    font-size: 2rem;
 }

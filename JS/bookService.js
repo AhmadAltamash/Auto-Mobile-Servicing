@@ -66,5 +66,42 @@ close.addEventListener("click", ()=>{
 })
 }
 
+function notify(){
+    function showNotification() {
+        const notification = document.getElementById('notification');
+        notification.classList.add('show'); 
+    
+        setTimeout(() => {
+            notification.classList.remove('show');
+            localStorage.removeItem('showNotification');
+        }, 10000);
+    }
+    
+    window.onload = function() {
+        if (localStorage.getItem('showNotification') === 'true') {
+            showNotification();
+        }
+    };
+    
+    // Handle the submit button click event
+    document.getElementById('submit').addEventListener('click', function() {
+        localStorage.setItem('showNotification', 'true');
+    });    
+}
+
+function insertDate() {
+    let date = document.querySelector("#dateInput");
+    let dateDisplay = document.querySelector(".insertDate");
+    
+    date.addEventListener("input", () => {
+        let selectedDate = date.value;
+        let reversedDate = selectedDate.split('-').reverse().join('');
+        dateDisplay.textContent = reversedDate;
+    });
+}
+
+
+insertDate()
+notify()
 currtime()
 navBar()

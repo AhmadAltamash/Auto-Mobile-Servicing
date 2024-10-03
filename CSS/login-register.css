@@ -6,6 +6,14 @@ main{
     justify-content: center;
     align-items: center;
 }
+.servicesMain{
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #parent{
   position: relative;
   display: flex;
@@ -18,11 +26,12 @@ main{
 }
 #parent-row{
   position: relative;
-  padding-top: 8vw;
+  padding-top: 7vw;
+  height: 100vh;
 }
 #parent-row h1{
   font-size: 3em;
-  padding: 0em 2em 0.3em 2em;
+  padding: 0em 2em 0.3em 1em;
   text-transform: uppercase;
 }
 
@@ -141,6 +150,11 @@ main{
   }
   .container-login .acc-text span a{
     text-decoration: underline;
+    color: #0070f0;
+    cursor: pointer;
+  }
+  .acc-text a
+  {
     color: #0070f0;
     cursor: pointer;
   }
@@ -318,4 +332,43 @@ main{
 }
 #password-container .close3{
   display: none;
+}
+.demoId{
+  position: absolute;
+  right: 20%;
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 20px;
+  background: #fff5c5;
+  z-index: 99;
+  transition: all ease .5s;
+  cursor: pointer;
+}
+.demoId::before{
+  content: "Demo Id";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  width: max-content;
+}
+.demoId:hover{
+  width: 14em;
+  height: max-content;
+  transition: all ease .8s;
+  border-radius: 20px;
+  padding: 1em;
+}
+.demoId:hover::before{
+  opacity: 0;
+}
+.demoId p{
+  opacity: 0;
+  color: #000;
+  width: 14em;
+}
+.demoId:hover p{
+  opacity: 1;
+  transition: all ease-in-out .5s;
 }

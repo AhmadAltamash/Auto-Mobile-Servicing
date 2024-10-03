@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    color: #000;
+}
+#invoiceMain{
+    height: auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+#bill{
+    height: auto;
+    width: 40%;
+    background: #fff;
+    padding: 1em 1em;        
+    box-shadow: 0 4px 8px rgb(0, 0, 0);  
+}
+
+.invoiceHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.invoiceHeading img{
+    height: 80px;
+}
+.invoiceHeading h1{
+    font-weight: 100;
+}
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5em;
+}
+.address{
+    width: 40%;
+}
+.services {
+    display: block; /* Remove flexbox to allow full width expansion */
+    margin-top: 6em;
+    width: 100%; /* Make sure parent div takes full width */
+}
+
+.table-body {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+thead th {
+    text-align: left;
+    padding: 12px;
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #cecece;
+}
+
+tbody td {
+    padding: 12px;
+    border-bottom: 2px solid #cecece;
+}
+
+tbody tr:last-child td {
+    font-weight: bold;
+    border-bottom: none;
+}
+tbody tr:last-child td:nth-child(2) {
+    font-weight: bold;
+    border-bottom: 2px solid #cecece;
+    color: #2967d1;
+}
+
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+.invoiceFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 7em;
+}
+.invoiceFooter h2{
+    font-weight: 300;
+    margin-bottom: 1.5em;
+    font-size: 3em;
+}
+.invoiceFooter h3{
+    font-weight: 500;
+    width: 65%;
+}
+.Btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(27, 27, 27);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
+  }
+  
+  .svgIcon {
+    fill: rgb(214, 178, 255);
+  }
+  
+  .icon2 {
+    width: 18px;
+    height: 5px;
+    border-bottom: 2px solid rgb(182, 143, 255);
+    border-left: 2px solid rgb(182, 143, 255);
+    border-right: 2px solid rgb(182, 143, 255);
+  }
+  
+  .tooltip {
+    position: absolute;
+    right: -160px;
+    opacity: 0;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .2s;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+  }
+  
+  .tooltip::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: rgb(12, 12, 12);
+    background-size: 1000%;
+    background-position: center;
+    transform: rotate(45deg);
+    left: -5%;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .tooltip {
+    opacity: 1;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover {
+    background-color: rgb(150, 94, 255);
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .icon2 {
+    border-bottom: 2px solid rgb(235, 235, 235);
+    border-left: 2px solid rgb(235, 235, 235);
+    border-right: 2px solid rgb(235, 235, 235);
+  }
+  
+  .Btn:hover .svgIcon {
+    fill: rgb(255, 255, 255);
+    animation: slide-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  

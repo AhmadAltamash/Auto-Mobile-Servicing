@@ -17,7 +17,18 @@ close.addEventListener("click", ()=>{
     close.style.display = "none"
 })
 }
+function profile(){
+    let showMore = document.querySelector(".nav-content .more");
+    let links = document.querySelector(".multiple-links");
 
+    showMore.addEventListener("mouseover", () => {
+        links.style.display = "flex";
+    });
+
+    links.addEventListener("mouseleave", () => {
+        links.style.display = "none";
+    });
+}
 function search(){
     let details = document.querySelector(".search-filter input");
     let icon = document.querySelector(".search-filter i");
@@ -69,7 +80,7 @@ function cal(){
         let discountValue = parseFloat(discount.value);
 
         if (!isNaN(chargeValue) && !isNaN(discountValue)) {
-            total.value = chargeValue - (chargeValue * (discountValue / 100));
+            total.value = Math.floor(chargeValue - (chargeValue * (discountValue / 100)));
         } else {
             total.value = ""; // Clear the total if inputs are invalid
         }
@@ -87,7 +98,7 @@ function bgclick(){
         })
     })
 }
-
+profile()
 bgclick()
 cal()
 formdisplay()

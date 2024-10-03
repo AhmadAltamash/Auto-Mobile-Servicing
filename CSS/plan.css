@@ -241,9 +241,10 @@ a:hover .activated{
   align-items: center;
   justify-content: center;
   width: 100%;
+  position: relative;
 }
 .details .list-details{
-  padding-top: 2.5rem;
+  padding-top: 2.3rem;
   width: 90%;
   display: flex;
   align-items: center;
@@ -257,8 +258,55 @@ a:hover .activated{
   border-right: 1px solid #fff;
 }
 .platinum .list-details{
-    padding-top: 3.2rem;
+    padding-top: 1.8rem;
 }
 .platinum .list-details ul li{
-    font-size: .94rem;
+    font-size: .82rem;
 }
+.button-pro {
+    width: max-content;
+    display: flex;
+    padding: 0.8em 1.1em;
+    gap: 0.4rem;
+    border: none;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+    background: linear-gradient(
+        15deg,
+        #880088,
+        #aa2068,
+        #cc3f47,
+        #de6f3d,
+        #f09f33,
+        #de6f3d,
+        #cc3f47,
+        #aa2068,
+        #880088
+      )
+      no-repeat;
+    background-size: 300%;
+    background-position: left center;
+    transition: background 0.3s ease;
+    color: #fff;
+    margin-top: 1em;
+    position: absolute;
+    bottom: -15%;
+    left: 33.2%;
+  }
+  
+  .button-pro:hover {
+    background-size: 320%;
+    background-position: right center;
+  }
+  
+  .button-pro:hover svg {
+    fill: #fff;
+  }
+  
+  .button-pro svg {
+    width: 23px;
+    fill: #f09f33;
+    transition: 0.3s ease;
+  }

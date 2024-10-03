@@ -13,7 +13,7 @@ main{
     position: relative;
 }
 .multiple-links{
-    position: absolute;
+    position: fixed;
     z-index: 99;
     background: #00000059;
     height: 20em;
@@ -25,7 +25,7 @@ main{
     backdrop-filter: blur(4px);
     border-radius: 10px;
     padding: 1em;
-    right: 11%;
+    right: 12.3%;
     top: 12%;
 }
 .multiple-links a{
@@ -74,7 +74,7 @@ a:hover .activated{
     background-image: radial-gradient(
         #8b8b8b, #1d252e
     );
-    overflow-x: hidden;
+    overflow: hidden;
 }
 #dCanvas{
     height: 100vh;
@@ -206,7 +206,16 @@ a:hover .activated{
     }
 }
 #parent{
-  padding-top: 8em;
+  padding-top: 7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  gap: 4em;
+}
+#parentBooking{
+  padding-top: 5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -303,7 +312,9 @@ a:hover .activated{
     border-radius: 10px;
     color: #000;
 }
-
+.selectOption option{
+    color: #000;
+}
 
 .container-register .form label .input + span {
   position: absolute;
@@ -369,7 +380,7 @@ a:hover .activated{
   background: #fff5;
   border-radius: 10px;
   backdrop-filter: blur(5px);
-  height: 60vh;
+  height: auto;
 }
 .table-heading{
   background: #fff4;
@@ -447,7 +458,7 @@ tbody tr.hide td{
 }
 .table-body::-webkit-scrollbar-thumb{
   border-radius: .5rem;
-  background: rgba(0, 0, 0, 0.071);
+  background: rgba(255, 255, 255, 0.071);
   visibility: hidden;
 }
 .table-body:hover::-webkit-scrollbar-thumb{
@@ -478,5 +489,112 @@ tbody tr:hover{
 @media screen and (max-width:1000px) {
   td:not(:first-of-type){
       min-width: 11rem;
+  }
+}
+
+.booked {
+  background: #6be1ff;
+  color: #000;
+  border-radius: 20px;
+  padding: .1rem .5rem;
+  font-weight: 600;
+}
+
+.checked-in {
+  background: #ffd469;
+  color: #000;
+  border-radius: 20px;
+  padding: .1rem .5rem;
+  font-weight: 600;
+}
+
+.checked-out {
+  background: #53ff86;
+  color: #000;
+  border-radius: 20px;
+  padding: .1rem .5rem;
+  font-weight: 600;
+}
+
+.cancelled {
+  background: #ff5555;
+  color: #000;
+  border-radius: 20px;
+  padding: .1rem .5rem;
+  font-weight: 600;
+}
+.btn-chk-in{
+  background-color: #256227;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: .2rem .5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.notify {
+  position: absolute;
+  background: #fff;
+  border-radius: 10px;
+  height: 4.5em;
+  width: 20em;
+  right: 4%;
+  bottom: 10%;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s linear 1s; 
+}
+
+.notify.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease, visibility 0s linear 0s;
+}
+
+.notify .check i {
+  background: #256227;
+  border-radius: 50%;
+  font-size: 1.2em;
+  padding: .4em;
+  font-weight: 900;
+  margin-left: .3em;
+}
+
+.notify .check {
+  animation: check 2s infinite linear;
+}
+
+.notify .msg p {
+  color: #000;
+}
+.notify .msg p:nth-child(3) {
+  font-size: .9em;
+  font-weight: bold;
+  opacity: 0.7;
+}
+.notify .msg p:nth-child(3) span {
+  color: #000;
+}
+.notify .msg p:nth-child(1) {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.notify .msg p:nth-child(2) {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+@keyframes check {
+  0% {
+      transform: scale(0.5);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(0.5);
   }
 }

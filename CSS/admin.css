@@ -7,16 +7,27 @@ html,body{
     height:100vh;
     width:100%;
 }
+video{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+  opacity: .6;
+}
+.hideContent{
+  background: #000;
+  margin-top: 5em;
+}
 main{
-  height: 100vh;
-  width: 100%;
+  height: auto;
   position: relative;
 }
 .multiple-links{
-  position: absolute;
+  position: fixed;
   z-index: 99;
   background: #00000059;
-  height: 20em;
+  height: 22em;
   width: max-content;
   display: none;
   flex-direction: column;
@@ -26,7 +37,7 @@ main{
   border-radius: 10px;
   padding: 1em;
   right: 11%;
-  top: 12%;
+  top: 11%;
 }
 .multiple-links a{
   font-size: 1.2em;
@@ -63,21 +74,80 @@ main{
 .multiple-links a:hover{
   color: #000;
 }
+.customerDets{
+  height: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5em;
+}
+#adminProfile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7em;
+}
 .page1{
   position: relative;
-  height: max-content;
+  height: 100vh;
   width: 100%;
-  padding: 10em 2em 0em 2em;
+  padding: 0em 2em 0em 2em;
   display: flex;
   flex-direction: column;
   gap: 2em;
   align-items: center;
+  justify-content: center;
+}
+
+.page1 h1{
+  font-size: 6.5em;
+  font-weight: 900;
+  position: relative;
+  text-align: center;
+}
+.page1 h1:nth-child(1):before{
+  content: "Welcome To";
+  position: absolute;
+  color: #000;
+  top: -1.4%;
+  left: 22%;
+  -webkit-text-stroke: 2px #95C11E;
+  z-index: -1;
+}
+.page1 h1:nth-child(2):before{
+  content: "TorqueMaster Garage";
+  position: absolute;
+  color: #000;
+  top: -1.4%;
+  left: -0.3%;
+  -webkit-text-stroke: 2px #95C11E;
+  z-index: -1;
+}
+.page1 h2{
+  font-size: 4.5em;
+  font-weight: 900;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+}
+.page1 h2 span{
+  color: #95C11E;
 }
 .addPage{
   position: relative;
   height: max-content;
   width: 100%;
-  padding: 10em 2em 0em 2em;
+  padding: 7em 2em 0em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addService{
+  position: relative;
+  height: max-content;
+  width: 100%;
+  padding: 5em 2em 0em 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,53 +155,15 @@ main{
 .heading{
   padding: 0em 2em 2em 2em;
 }
-.heading h1{
-  color: #eee;
-  display: block;
-  text-align: center;
-  width: 550px;
-  margin: 40px 0px;
-  letter-spacing: 5px;
-  font-size: 5em;
-  font-weight: bolder;
-  text-shadow:
-      1px 1px 0 #aaa,
-      2px 2px 0 #bbb,
-      3px 3px 0 #bbb,
-      4px 4px 0 #bbb,
-      4px 4px 15px #888,
-      4px 4px 5px #444;
-  -moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-5deg, -5deg);
-  -webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-5deg, -5deg);
-  -o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-5deg, -5deg);
-  -ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-5deg, -5deg);
-  transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-5deg, -5deg);
-  -webkit-transition: all 400ms ease-in-out;
-  -moz-transition: all 400ms ease-in-out;
-  -o-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
-}
-
-.heading h1:hover {
-  margin: 70px 10px 80px 10px;
-  text-shadow:1px 1px 0 #aaa,
-  2px 2px 0 #bbb,
-  3px 3px 0 #bbb,
-  4px 4px 0 #bbb,
-  13px 13px 35px #888,
-  3px 13px 20px #444;
-}
-.hideContent{
-  display: none;
-}
 .customer-details{
-  margin: 0em 2em 2em 2em;
+  margin: 2em;
   border: 1px solid #fff;
   width: 90%;
   background: #fff5;
   border-radius: 10px;
   backdrop-filter: blur(5px);
-  height: 60vh;
+  height: auto;
+  position: relative;
 }
 .table-heading{
   background: #fff4;
@@ -196,7 +228,7 @@ tbody tr.hide td{
   transition: .2s ease-in-out .5s;
 }
 .table-body{
-  width: 95%;
+  width: 98%;
   max-height: calc(89% - 2rem);
   background: rgba(255, 255, 255, 0.749);
   margin: 1rem auto;
@@ -211,13 +243,13 @@ tbody tr.hide td{
 }
 .table-body::-webkit-scrollbar-thumb{
   border-radius: .5rem;
-  background: rgba(0, 0, 0, 0.071);
+  background: rgb(134, 134, 134);
   visibility: hidden;
 }
 .table-body:hover::-webkit-scrollbar-thumb{
   visibility: visible;
 }
-table{
+table {
   width: 100%;
 }
 table, th, td{
@@ -227,7 +259,7 @@ table, th, td{
   color: #000;
 }
 td:not(:first-of-type){
-  min-width: 6.3rem;
+  min-width: 8rem;
 }
 thead th{
   position: sticky;
@@ -247,7 +279,45 @@ tbody tr:hover{
       min-width: 11rem;
   }
 }
+.booked {
+  background: #6be1ff;
+  color: #000;
+  border-radius: 20px;
+  padding: .1rem .5rem;
+  font-weight: 600;
+}
 
+.checked-in {
+  background: #ffd469;
+  color: #000;
+  border-radius: 20px;
+  padding: .1rem .5rem;
+  font-weight: 600;
+}
+
+.checked-out {
+  background: #4de67b;
+  color: #000;
+  border-radius: 20px;
+  padding: .1rem .5rem;
+  font-weight: 600;
+}
+
+.cancelled {
+  background: #ff5555;
+  color: #000;
+  border-radius: 20px;
+  padding: .1rem .5rem;
+  font-weight: 600;
+}
+.btn-chk-in{
+  background-color: #256227;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: .2rem .5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
 .addPlans{
     border-radius: 5px;
     border: 1px solid #000;
@@ -514,25 +584,222 @@ tbody tr:hover{
     }
   }
 
-#parent{
-    padding-top: 10em;
+.addPlansForm{
+  display: none;
+}
+.addPlansForm .form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.addPlansForm .title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.addPlansForm .title::before,.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
+
+.addPlansForm .title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
+
+.addPlansForm .title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.addPlansForm .message, .signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.addPlansForm .signin {
+  text-align: center;
+}
+
+.addPlansForm .signin a {
+  color: royalblue;
+}
+
+.addPlansForm .signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.addPlansForm .flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.addPlansForm .form label {
+  position: relative;
+}
+
+.addPlansForm .form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  color: #000;
+}
+
+.addPlansForm .form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.addPlansForm .form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.addPlansForm .form label .input:focus + span,.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.addPlansForm .form label .input:valid + span {
+  color: green;
+}
+
+.addPlansForm .submit {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.addPlansForm .login{
+  cursor: pointer;
+}
+.addPlansForm .submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+#Edit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6vw;
+}
+
+#BookingTable{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: auto;
     width: 100%;
+    padding: 5em 0em;
+}
+#invoiceTable{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+.billGenerate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7em;
+}
+.billGenerate .container-register form .btn-bill{
+  display: flex;
+  justify-content: space-between;
 }
 .page2{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    padding-top: 10em;
-    display: none;
+  position: relative;
+  height: auto;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 99;
+  background-image: radial-gradient(
+    #8b8b8b, #1d252e
+  ); 
 }
-.page2 #history{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+thead span.icon-arrow{
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: #ffffff00;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.2px solid #95C11E;
+  transition: all ease 0.5s;
+  padding: .8rem;
+  cursor: pointer;
+}
+#bills{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 120vh;
+  width: 100%;
+}
+.bills i{
+  color: #000;
+  cursor: pointer;
+  font-size: 1.4em;
+  border-radius: 50%;
+  transition: all ease .5s;
+}
+.bills i:hover{
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  scale: .8;
 }
