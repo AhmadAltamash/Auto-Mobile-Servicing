@@ -27,8 +27,8 @@
 </head>
 
 <body>
-<nav>
-            <a href="index.html" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
+        <nav>
+            <a href="../index.jsp" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
@@ -44,13 +44,15 @@
 
     <main class="main">
         
-        <div class="multiple-links" style="height:23em; right:10%">
+        <div class="multiple-links" style="height:29em; right:10%">
+            <a href="profile.jsp">Edit Profile</a>
             <a href="addPlans.jsp">Add Plans</a>
             <a href="addServices.jsp">Add Services</a>
             <a href="bookings.jsp" class="showBooking">Bookings</a>
-            <a href="billing.jsp" class="activated">Billing</a>
-            <a href="#bills">Bills</a>
+            <a href="#" class="activated">Billing</a>
+            <a href="#bills" class="showBill">Bills</a>
             <a href="Customers.jsp">Customer's Details</a>
+            <a href="planManagement.jsp">Plans Management</a>
         </div>
 
         <div class="billGenerate">
@@ -168,8 +170,9 @@
 
         <div id="bills">
             <div class="customer-details">
-                    <div class="table-heading">
-                        <h3>Bookings</h3>
+                    <div class="table-heading bills">
+                        <h3>Bills</h3>
+                        <i class="ri-close-fill close2"></i>
                     </div>
                     <section class="table-body">
                         <table>
@@ -245,6 +248,15 @@
         });
         }
         profile()
+
+        let showBill = document.querySelector(".showBill").addEventListener("click",()=>{
+            let bill = document.querySelector("#bills");
+            bill.style.display = "flex";
+        })
+        let closeBill = document.querySelector(".close2").addEventListener("click",()=>{
+            let bill = document.querySelector("#bills");
+            bill.style.display = "none";
+        })
     </script>
 </body> 
 </html>

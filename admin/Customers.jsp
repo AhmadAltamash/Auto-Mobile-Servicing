@@ -17,7 +17,7 @@
 </head>
 <body>
         <nav>
-            <a href="../index.html" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
+            <a href="../index.jsp" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
@@ -33,13 +33,16 @@
 
     <%@include file="../JSP/connect.jsp" %>
         <main id="main">
-             <div class="multiple-links" style="right:10.2%;">
+             <div class="multiple-links" style="right:9.8%">
+                <a href="profile.jsp">Edit Profile</a>
                 <a href="addPlans.jsp">Add Plans</a>
                 <a href="addServices.jsp">Add Services</a>
                 <a href="bookings.jsp" class="showBooking">Bookings</a>
                 <a href="billing.jsp">Billing</a>
-                <a href="Customers.jsp" class="activated">Customer's Details</a>
+                <a href="#" class="activated">Customer's Details</a>
+                <a href="planManagement.jsp">Plans Management</a>
             </div>
+
             <div class="customerDets">
                  <div class="customer-details hideContent" id="details">
                     <div class="table-heading">

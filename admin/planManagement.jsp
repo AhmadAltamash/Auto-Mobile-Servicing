@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
     <title>
-        Bookings
+        Managing Plans
     </title>
 </head>
 
@@ -43,78 +43,48 @@
                 <a href="profile.jsp">Edit Profile</a>
                 <a href="addPlans.jsp">Add Plans</a>
                 <a href="addServices.jsp">Add Services</a>
-                <a href="#" class="activated">Bookings</a>
+                <a href="bookings.jsp" class="showBooking">Bookings</a>
                 <a href="billing.jsp">Billing</a>
                 <a href="Customers.jsp">Customer's Details</a>
-                <a href="planManagement.jsp">Plans Management</a>
+                <a href="#" class="activated">Plans Management</a>
             </div>
 
             <div id="BookingTable">
                 
                 <div class="customer-details">
                     <div class="table-heading">
-                        <h3>Bookings</h3>
+                        <h3>Managing Plans</h3>
                     </div>
                     <section class="table-body">
                         <table>
                             <thead>
                                 <tr>
                                     <th>Sr.No.</th>
+                                    <th>Plan Id</th>
+                                    <th>Customer Id</th>
                                     <th>Customer Name</th>
-                                    <th>Contact No.</th>
-                                    <th>Service Name</th>
-                                    <th>Service Price</th>
-                                    <th>Date of Booking</th>
-                                    <th>Booking Day</th>
-                                    <th>Time To Deliver</th>
-                                    <th>Time Of Booking</th>
+                                    <th>Plan Name</th>
+                                    <th>Plan Price</th>
                                     <th>Status</th>
-                                    <th>Servicing</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <%
                                 int sr1=0;
                                 stmt=con.createStatement();
-                                rs=stmt.executeQuery("SELECT * from booking ORDER BY booking_id DESC");
+                                rs=stmt.executeQuery("SELECT * from customers_plan ORDER BY cpsr DESC");
                                 while(rs.next()){
                                     sr1++;
                                 %>
                                 <tr>
                                     <td><%= sr1 %></td>
+                                    <td><%= rs.getString("cpid") %></td>
+                                    <td><%= rs.getString("cust_id") %></td>
                                     <td><%= rs.getString("cust_name") %></td>
-                                    <td><%= rs.getString("contact") %></td>
-                                    <td><%= rs.getString("serv_name") %></td>
-                                    <td><%= rs.getString("serv_price") %></td>
-                                    <td><%= rs.getString("date_of_booking") %></td>
-                                    <td><%= rs.getString("book_day") %></td>
-                                    <td><%= rs.getString("time_to_deliver") %></td>
-                                    <td><%= rs.getString("time_of_booking") %></td>
+                                    <td><%= rs.getString("plan_name") %></td>
+                                    <td><%= rs.getString("price") %></td>
                                     <td>
-                                    <%
-                                    if (rs.getInt("service_status") == 1) {
-                                        out.println("<span class='booked'>Booked</span>");
-                                    } else if (rs.getInt("service_status") == 2) {
-                                        out.println("<span class='checked-in'>Checked-In</span>");
-                                    } else if (rs.getInt("service_status") == 3) {
-                                        out.println("<span class='checked-out'>Services Done</span>");
-                                    } else if (rs.getInt("service_status") == 4) {
-                                        out.println("<span class='cancelled'>Cancelled</span>");
-                                    } else if (rs.getInt("service_status") == 5) {
-                                        out.println("<span class='checked-out'>Completed</span>");
-                                    }
-                                    %>
-                                    </td>
-                                    <td>
-                                        <% if(rs.getInt("service_status") == 1) {%>
-                                        <a href='../JSP/action.jsp?id=<%= rs.getInt("booking_id") %>&action=editstatus1'><button class='btn-chk-in'>Check-In</button></a>
-                                        <% }else if(rs.getInt("service_status") == 2) {%>
-                                        <a href='../JSP/action.jsp?id=<%= rs.getInt("booking_id") %>&action=editstatus2'><button class='btn-chk-in'>Check-Out</button></a>
-                                        <% }else if(rs.getInt("service_status") == 3) {%>
-                                        <a><button class='btn-chk-in'>Service Completed</button></a>
-                                        <% }else if(rs.getInt("service_status") == 5) {%>
-                                        <a><button class='btn-chk-in'>Invoice Generated</button></a>
-                                        <% }%>
+                                    <a style="text-decoration:none" href='../JSP/action.jsp?cpid=<%= rs.getInt("cpid") %>&custid=<%= rs.getInt("cust_id") %>&action=deleteSubscribedPlans' onclick="return(confirm('Are you sure want to expire this plan?'))"><button class="expireButton">Expire</button></a>
                                     </td>
                                 </tr> 
                                 <%
@@ -152,6 +122,6 @@
     }
     else
     {
-        response.sendRedirect("login_register.jsp");
+        response.sendRedirect("index.jsp");
     }
 %>
