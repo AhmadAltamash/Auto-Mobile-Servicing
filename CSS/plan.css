@@ -310,3 +310,23 @@ a:hover .activated{
     fill: #f09f33;
     transition: 0.3s ease;
   }
+
+.planSubscribed{
+    padding-top: 7em;
+    height: 18em;
+}
+.planSubscribed .headPlan{
+    font-size: 3em;
+    color: #ffffff;
+    text-align: center;
+}
+.planSubscribed .plansPara{
+    font-size: 1.7em;
+    text-align: center;
+    font-weight: 600;
+    color: #000;
+}
+.planSubscribed .plansPara strong{
+    color: #fff;
+    font-size: 2rem;
+}

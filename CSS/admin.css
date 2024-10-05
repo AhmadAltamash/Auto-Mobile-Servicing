@@ -27,7 +27,7 @@ main{
   position: fixed;
   z-index: 99;
   background: #00000059;
-  height: 22em;
+  height: 26em;
   width: max-content;
   display: none;
   flex-direction: column;
@@ -802,4 +802,21 @@ thead span.icon-arrow{
   color: #fff;
   border-radius: 50%;
   scale: .8;
+}
+.expireButton {
+  color: #ecf0f1;
+  font-size: 17px;
+  background-color: #ff533d;
+  border: 1px solid #f31212;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow: 0px 6px 0px #d30000;
+  transition: all 0.1s;
+}
+
+.expireButton:active {
+  box-shadow: 0px 2px 0px #d31200;
+  position: relative;
+  top: 2px;
 }
