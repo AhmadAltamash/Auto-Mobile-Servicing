@@ -140,6 +140,6 @@
     }
     else
     {
-        response.sendRedirect("login_register.jsp");
+        response.sendRedirect("../index.jsp");
     }
 %>
