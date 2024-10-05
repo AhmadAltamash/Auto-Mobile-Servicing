@@ -150,7 +150,7 @@
             }
             else{
                 msg="Invalid Credentials";
-                response.sendRedirect("../admin/index.jsp?msg="+msg);
+                response.sendRedirect("../admin/login.jsp?msg="+msg);
             }
             
         }
