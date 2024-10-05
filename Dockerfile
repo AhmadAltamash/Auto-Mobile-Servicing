@@ -5,7 +5,7 @@ FROM tomcat:9.0-jdk11
 WORKDIR /usr/local/tomcat/webapps/
 
 # Copy your JSP files and the compiled Java classes to the webapps folder
-COPY ./src/main/webapp/ .
+COPY . .
 
 # Expose port 8080 for accessing the web application
 EXPOSE 8080
