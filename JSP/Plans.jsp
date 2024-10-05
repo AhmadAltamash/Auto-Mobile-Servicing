@@ -24,7 +24,7 @@
 
 <body>
         <nav>
-            <a href="../index.jsp" class="logo"><img src="../Media/Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
+            <a href="../index.jsp" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
@@ -41,7 +41,7 @@
         <div class="plans-card">
             <div class="gold">
                 <span class="plan-heading">
-                    <h1>Membership Plans</h1>
+                    <h1>Membership Plan</h1>
                     <p>for Torque Master Garage</p>
                 </span>
                 <div class="plan-content">
@@ -89,12 +89,12 @@
                             <li>Priority service</li>
                         </ul>
                     </div>
-                    <a style="text-decoration:none" href='#?bid=<%= rs.getInt("pid") %>'><button class="button-pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
+                    <a style="text-decoration:none" href='planPurchase.jsp?bid=<%= rs.getInt("pid") %>'><button class="button-pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
                 </div>
             </div>
             <div class="silver">
                     <span class="plan-heading">
-                        <h1>Membership Plans</h1>
+                        <h1>Membership Plan</h1>
                         <p>for Torque Master Garage</p>
                     </span>
                     <div class="plan-content">
@@ -140,13 +140,13 @@
                             <li>Complimentary vehicle inspection</li>
                         </ul>
                     </div>
-                    <a style="text-decoration:none" href='#?bid=<%= rs.getInt("pid") %>'><button class="button-pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
+                    <a style="text-decoration:none" href='planPurchase.jsp?bid=<%= rs.getInt("pid") %>'><button class="button-pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
                 </div>
             </div>
             
             <div class="platinum">
                 <span class="plan-heading">
-                    <h1>Membership Plans</h1>
+                    <h1>Membership Plan</h1>
                     <p>for Torque Master Garage</p>
                 </span>
                 <div class="plan-content">
@@ -196,10 +196,11 @@
                             <li>Complimentary annual detailing</li>
                         </ul>
                     </div>
-                    <a style="text-decoration:none" href='#?bid=<%= rs.getInt("pid") %>'><button class="button-pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
+                    <a style="text-decoration:none" href='planPurchase.jsp?bid=<%= rs.getInt("pid") %>'><button class="button-pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
                 </div>
             </div>
         </div>
+
     </main>
 
 

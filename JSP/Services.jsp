@@ -12,20 +12,21 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/login-register.css">
+    <link rel="stylesheet" href="../CSS/user.css">
     <title>
         TorqueMaster Garage — A place where we ensure your vehicles value
     </title>
 </head>
 
 <body>
-<nav>
-            <a href="index.html" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
+        <nav>
+            <a href="../index.jsp" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
                 <a href="welcomeuser.jsp">home</a>
-                <a href="#" class="activated">Services</a>
-                <a href="logout.jsp">Log out</a>
+                <a class="more" href="#">More</a>
+                <a href="logout.jsp" target="_self">Logout</a>
             </div>
             <span class="icons">
                 <i class="ri-menu-fold-line menu"></i>
@@ -34,6 +35,13 @@
         </div>
 
     <main class="main">
+            <div class="multiple-links">
+                <a href="users.jsp">Edit Profile</a>
+                <a href="#" class="activated">Services</a>
+                <a href="myBookings.jsp">My Bookings</a>
+                <a href="planSubscribed.jsp">Plan Member</a>
+                <a href="bill.jsp">Billing</a>
+            </div>
         <div id="parent-row">
             <h1 id="servicess">Services</h1>
                 <div class="row">
@@ -63,6 +71,21 @@
 
     <!-- Script -->
     <script src="../JS/user.js"></script>
+    <script>
+        function profile(){
+        let showMore = document.querySelector(".nav-content .more");
+        let links = document.querySelector(".multiple-links");
+
+        showMore.addEventListener("mouseover", () => {
+            links.style.display = "flex";
+        });
+
+        links.addEventListener("mouseleave", () => {
+            links.style.display = "none";
+        });
+    }
+    profile()
+    </script>
 </body>
 
 </html>

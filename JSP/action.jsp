@@ -145,6 +145,7 @@
                 msg="Login Successful";
                 fname=rs.getString("Full_Name");
                 session.setAttribute("full_name",fname);
+                session.setAttribute("admin_id",String.valueOf(rs.getInt("admin_id")));
                 response.sendRedirect("../admin/welcomeadmin.jsp?msg="+msg);
             }
             else{
@@ -288,7 +289,7 @@
         }
     }
 %>
-<%-- Adding Profile --%>
+<%-- Editing Profile --%>
 <%
     if(action.equals("editprofile")){
         String fullname,email,mobile,v_name,v_type,v_num,v_model,address;
@@ -308,6 +309,31 @@
             
             msg="Registration Failed"+e.toString();
             response.sendRedirect("users.jsp?msg="+msg);
+        }    
+        finally{
+            con.close();
+        }
+    }
+%>
+<%-- Editing Admin Profile --%>
+<%
+    if(action.equals("editAdminProfile")){
+        String email,mobile,address,pincode;
+        int aid=Integer.parseInt(request.getParameter("aid"));
+        email = request.getParameter("email");
+        mobile = request.getParameter("mobile");
+        address=request.getParameter("address");
+        pincode = request.getParameter("pincode");
+        try{
+            stmt = con.createStatement();
+            stmt.execute("update admin_rgstr set email='"+email+"',mobile='"+mobile+"', address='"+address+"', pincode='"+pincode+"' where admin_id='"+aid+"'");
+            msg="Profile Updated";
+            response.sendRedirect("../admin/profile.jsp?msg="+msg);
+        }
+        catch(Exception e){
+            
+            msg="Registration Failed"+e.toString();
+            response.sendRedirect("../admin/profile.jsp?msg="+msg);
         }    
         finally{
             con.close();
@@ -482,6 +508,55 @@
         }
         catch(Exception e){
             msg="Message Not Sent"+e.toString();
+        }    
+        finally{
+            con.close();
+        }
+
+    }
+%>
+<%-- Plan Purchasing --%>
+<%
+    if(action.equals("purchasePlan")){
+        int cpID, custID, price;
+        String planName, custName, validateFrom, validateTo;
+        cpID = Integer.parseInt(request.getParameter("cpID"));
+        custID = Integer.parseInt(request.getParameter("rid"));
+        price = Integer.parseInt(request.getParameter("planprice"));
+        planName = request.getParameter("planname");
+        custName = request.getParameter("cname");
+        validateFrom = request.getParameter("valid_date");
+        validateTo = request.getParameter("to_date");
+
+        try{
+            stmt = con.createStatement();
+            stmt.execute("insert into customers_plan(cpid,cust_id,cust_name,plan_name,price,valid_from, valid_to) values('"+cpID+"','"+custID+"','"+custName+"','"+planName+"','"+price+"','"+validateFrom+"','"+validateTo+"')");
+            msg="Plan Purchased";
+            response.sendRedirect("planSubscribed.jsp?msg="+msg);
+        }
+        catch(Exception e){
+            msg="Message Not Sent"+e.toString();
+        }    
+        finally{
+            con.close();
+        }
+    }
+%>
+<%-- Unsubscribing Plans By admin --%>
+<%
+    if(action.equals("deleteSubscribedPlans")){
+        int cpID, custID;
+        cpID = Integer.parseInt(request.getParameter("cpid"));
+        custID = Integer.parseInt(request.getParameter("custid"));
+
+        try{
+            stmt = con.createStatement();
+            stmt.execute("delete from customers_plan where cpid='"+cpID+"' AND cust_id = '"+custID+"'");
+            msg="deletion successful";
+            response.sendRedirect("../admin/planManagement.jsp?msg="+msg);
+        }
+        catch(Exception e){
+            msg="Deletion Failed"+e.toString();
         }    
         finally{
             con.close();

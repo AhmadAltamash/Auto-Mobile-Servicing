@@ -22,9 +22,9 @@
 
 <body>
 
-    <nav>
-        <a href="index.html" class="logo"><img src="../Media/Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
-    </nav>
+        <nav>
+            <a href="../index.jsp" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
+        </nav>
     <div class="parent-nav">            
         <div class="nav-content">
             <a href="../index.jsp">home</a>

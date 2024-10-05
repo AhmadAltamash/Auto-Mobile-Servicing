@@ -8,7 +8,7 @@
     if (firstname !=null){
         int sidFetch=Integer.parseInt(request.getParameter("bid"));
         stmt=con.createStatement();
-        rs=stmt.executeQuery("select * from services_plans where sid='"+sidFetch+"'");
+        rs=stmt.executeQuery("select * from plans where pid='"+sidFetch+"'");
         rs.next();
 %>
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../CSS/admin.css">
     <link rel="stylesheet" href="../CSS/user.css">
     <title>
-        Book For A Service
+        Purchase a Plan
     </title>
 </head>
 
@@ -58,13 +58,13 @@
                 <div class="bookServices container-register">
 
                     <form class="form" method="post" action="../JSP/action.jsp">
-                    <input type="hidden" name="action" value="bookservice">
-                    <p class="title">Book For A Service</p>
+                    <input type="hidden" name="action" value="purchasePlan">
+                    <p class="title">Subscribe for Plan</p>
                    
                     <div class="flex">
                         <label>
-                            <input required="" placeholder="" type="text" class="input" name="sid" value='<% out.println(rs.getString("sid"));%>' readonly >
-                            <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Service Id</span>
+                            <input required="" placeholder="" type="text" class="input" name="cpID" value='<% out.println(rs.getString("pid"));%>' readonly >
+                            <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Plan Id</span>
                         </label>
 
 
@@ -78,51 +78,30 @@
                         <input required="" class="input" name="cname" type="text" readonly value='<% out.println(firstname+" "+lastname);%>'>
                         <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Customer Name</span>
                     </label>
+  
                     <label>
-                        <input required="" class="input" name="contact" type="text" readonly value='<% out.println(mobile);%>'>
-                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Contact No.</span>
-                    </label>
-                    <label>
-                        <input required="" class="input" name="sname" type="text" readonly value='<% out.println(rs.getString("serv_name"));%>'>
-                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Service Name</span>
+                        <input required="" class="input" name="planname" type="text" readonly value='<% out.println(rs.getString("plan_name"));%>'>
+                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Plan Name</span>
                     </label>
 
                     <label>
-                        <input required="" class="input" name="sprice" type="text" readonly value='<% out.println(rs.getString("total"));%>'>
+                        <input required="" class="input" name="planprice" type="text" readonly value='<% out.println(rs.getString("total"));%>'>
                         <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Price</span>
                     </label>
 
                     <label>
-                        <input required="" class="input" name="date" type="date" id="dateInput">
-                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Booking Date</span>
+                        <input required="" type="text" readonly class="input valDate" name="valid_date">
+                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid From Date</span>
                     </label>
 
                     <label>
-                        <input type="text" id="dayOutput" name="day" readonly class="input"/>
-                        <span class="daySpan">Booking Day</span>
+                        <input required="" type="text" readonly class="input toDate" name="to_date">
+                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid To Date</span>
                     </label>
+                    
 
                     
-                    <label>
-                        <select name="time" id="time" class="selectOption">
-                            <option value="">--When You're Coming to see us--</option>
-                            <option value="09:00:00">09:00:00 A.M.</option>
-                            <option value="10:00:00">10:00:00 A.M.</option>
-                            <option value="11:00:00">11:00:00 A.M.</option>
-                            <option value="12:00:00">12:00:00 P.M.</option>
-                            <option value="01:00:00">01:00:00 P.M.</option>
-                            <option value="02:00:00">02:00:00 P.M.</option>
-                            <option value="03:00:00">03:00:00 P.M.</option>
-                        </select>
-                    </label>
-
-                    <label>
-                        <input type="text" id="currentTime" name="currentTime" class="input" readonly/>
-                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Time Of Booking</span>
-                    </label>
-
-                    
-                    <button class="submit" type="submit" id="submit" style="cursor:pointer">Book</button>
+                    <button class="submit" type="submit" id="submit" style="cursor:pointer">Purchase</button>
                     
                     </form>
                 </div>
@@ -133,31 +112,16 @@
                 <i class="ri-check-fill"></i>
             </div>
             <div class="msg">
-                <p>Your Service Has Been Booked</p>
-                <p>Go To My Bookings For Further Details</p>
-                <p>Token: #<% out.print(rs.getString("sid"));%><% out.print(Cid);%><span class="insertDate"></span></p>
+                <p>Plan Purchasing Successfull</p>
+                <p>Go To Plan Memebers</p>
             </div>
         </div>
 
     </main>
 
     <!-- Script -->
-    <script src="../JS/bookService.js"></script>
-    <script>
-        function profile(){
-        let showMore = document.querySelector(".nav-content .more");
-        let links = document.querySelector(".multiple-links");
-
-        showMore.addEventListener("mouseover", () => {
-            links.style.display = "flex";
-        });
-
-        links.addEventListener("mouseleave", () => {
-            links.style.display = "none";
-        });
-    }
-    profile()
-    </script>
+    <script src="../JS/planPurchase.js"></script>
+    
 </body> 
 </html>
 

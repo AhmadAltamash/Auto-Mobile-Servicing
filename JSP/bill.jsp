@@ -26,14 +26,14 @@
 </head>
 
 <body>
-<nav>
-            <a href="index.html" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
+        <nav>
+            <a href="../index.jsp" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
                 <a href="welcomeuser.jsp">home</a>
-                <a href="bookService.jsp" class="activated">bookings</a>
-                <a href="bill.jsp">Billing</a>
+                <a class="more" href="#">More</a>
+                <a href="logout.jsp" target="_self">Logout</a>
             </div>
             <span class="icons">
                 <i class="ri-menu-fold-line menu"></i>
@@ -41,54 +41,91 @@
             </span>
         </div>
 
-    <main class="main">
-            <div id="parent">
-                
-                <div class="customer-details">
-                    <div class="table-heading">
-                        <h3>Bookings</h3>
-                    </div>
-                    <section class="table-body">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Sr.No.</th>
-                                    <th>Bill No.</th>
-                                    <th>Service Name</th>
-                                    <th>Service Price</th>
-                                    <th>Date of Booking</th>
-                                    <th>Invoice</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <%
-                                int sr=0;
-                                stmt=con.createStatement();
-                                rs=stmt.executeQuery("SELECT * from billing where cust_id='"+Cid+"' ORDER BY billsr DESC");
-                                while(rs.next()){
-                                    sr++;
-                                %>
-                                <tr>
-                                    <td><%= sr %></td>
-                                    <td><%= rs.getString("billno") %></td>
-                                    <td><%= rs.getString("serv_name") %></td>
-                                    <td><%= rs.getString("serv_charge") %></td>
-                                    <td><%= rs.getString("billdate") %></td>
-                                    <td><a href='invoice.jsp?billno=<%= rs.getInt("billno") %>'><button class='btn-chk-in'>Download Invoice</button></a></td>
-                                </tr> 
-                                <%
-                                }
-                                %>
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
-
+        <main class="main">
+            <div class="multiple-links">
+                <a href="users.jsp">Edit Profile</a>
+                <a href="Services.jsp">Services</a>
+                <a href="myBookings.jsp">My Bookings</a>
+                <a href="planSubscribed.jsp">Plan Member</a>
+                <a href="#" class="activated">Billing</a>
             </div>
+        <div id="parent">
+            <div class="customer-details">
+                <div class="table-heading">
+                    <h3>Bookings</h3>
+                </div>
+                <section class="table-body">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Sr.No.</th>
+                            <th>Bill No.</th>
+                            <th>Service Name</th>
+                            <th>Service Price</th>
+                            <th>Date of Booking</th>
+                            <th>Invoice</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <%
+                        int sr = 0;
+                        int lastBillNo = -1; 
+                        stmt = con.createStatement();
+                        rs = stmt.executeQuery("SELECT * from billing WHERE cust_id='" + Cid + "' ORDER BY billno, billdate DESC");
+                        while (rs.next()) {
+                            int currentBillNo = rs.getInt("billno");
+                    
+                            if (currentBillNo != lastBillNo) {
+                                sr++;
+                        %>
+                        <tr>
+                            <td><%= sr %></td>
+                            <td><%= currentBillNo %></td>
+                            <td><%= rs.getString("serv_name") %></td>
+                            <td><%= rs.getString("serv_charge") %></td>
+                            <td><%= rs.getString("billdate") %></td>
+                            <td><a href='invoice.jsp?billno=<%= currentBillNo %>'><button class='btn-chk-in'>Download Invoice</button></a></td>
+                        </tr>
+                        <%
+                                lastBillNo = currentBillNo;
+                            } else {
+                        %>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><%= rs.getString("serv_name") %></td>
+                            <td><%= rs.getString("serv_charge") %></td>
+                            <td><%= rs.getString("billdate") %></td>
+                            <td></td>
+                        </tr>
+                        <%
+                            }
+                        }
+                        %>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
     </main>
 
     <!-- Script -->
     <script src="../JS/user.js"></script>
+    <script>
+        function profile(){
+        let showMore = document.querySelector(".nav-content .more");
+        let links = document.querySelector(".multiple-links");
+
+        showMore.addEventListener("mouseover", () => {
+            links.style.display = "flex";
+        });
+
+        links.addEventListener("mouseleave", () => {
+            links.style.display = "none";
+        });
+    }
+    profile()
+    </script>
 </body> 
 </html>
 

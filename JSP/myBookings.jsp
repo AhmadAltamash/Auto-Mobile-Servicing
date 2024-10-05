@@ -26,14 +26,14 @@
 </head>
 
 <body>
-<nav>
-            <a href="index.html" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
+        <nav>
+            <a href="../index.jsp" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
                 <a href="welcomeuser.jsp">home</a>
-                <a href="bookService.jsp" class="activated">bookings</a>
-                <a href="bill.jsp">Billing</a>
+                <a class="more" href="#">More</a>
+                <a href="logout.jsp" target="_self">Logout</a>
             </div>
             <span class="icons">
                 <i class="ri-menu-fold-line menu"></i>
@@ -41,7 +41,15 @@
             </span>
         </div>
 
-    <main class="main">
+        <main class="main">
+            <div class="multiple-links">
+                <a href="users.jsp">Edit Profile</a>
+                <a href="Services.jsp">Services</a>
+                <a href="#" class="activated">My Bookings</a>
+                <a href="planSubscribed.jsp">Plan Member</a>
+                <a href="bill.jsp">Billing</a>
+            </div>
+
         <div id="parent">
                 
                 <div class="customer-details">
@@ -112,6 +120,21 @@
        
     <!-- Script -->
     <script src="../JS/user.js"></script>
+    <script>
+        function profile(){
+        let showMore = document.querySelector(".nav-content .more");
+        let links = document.querySelector(".multiple-links");
+
+        showMore.addEventListener("mouseover", () => {
+            links.style.display = "flex";
+        });
+
+        links.addEventListener("mouseleave", () => {
+            links.style.display = "none";
+        });
+    }
+    profile()
+    </script>
 </body> 
 </html>
 

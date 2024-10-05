@@ -5,6 +5,9 @@
     String vehicle_name, vehicle_type, vehicle_num, vehicle_model, address;
 %>
 <%
+    String firstname=(String)session.getAttribute("f_name");
+    if (firstname !=null){
+
     String Cid=(String)session.getAttribute("rid");
     
     rid_edit = Integer.parseInt(Cid);
@@ -59,13 +62,14 @@
 </head>
 
 <body>
-<nav>
-            <a href="index.html" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
+        <nav>
+            <a href="../index.jsp" class="logo"><img src="../Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
-                <a href="welcomeuser.jsp">Home</a>
-                <a href="users.jsp" class="activated">Profile</a>
+                <a href="welcomeuser.jsp">home</a>
+                <a class="more" href="#">More</a>
+                <a href="logout.jsp" target="_self">Logout</a>
             </div>
             <span class="icons">
                 <i class="ri-menu-fold-line menu"></i>
@@ -74,6 +78,14 @@
         </div>
 
     <main class="main">
+
+            <div class="multiple-links">
+                <a href="#" class="activated">Edit Profile</a>
+                <a href="Services.jsp">Services</a>
+                <a href="myBookings.jsp">My Bookings</a>
+                <a href="planSubscribed.jsp">Plan Member</a>
+                <a href="bill.jsp">Billing</a>
+            </div>
 
         <div id="parent">
             <div class="container-register profileForm">
@@ -140,18 +152,30 @@
 
 
     </main>
-    <%-- <%
-    }
-    %> --%>
-    <%
-       if(request.getParameter("msg")!= null)
-       {
-            out.println("<p>"+ request.getParameter("msg")+"</p>");
-       }
-    %>
-
+    
     <!-- Script -->
     <script src="../JS/user.js"></script>
+    <script>
+        function profile(){
+        let showMore = document.querySelector(".nav-content .more");
+        let links = document.querySelector(".multiple-links");
+
+        showMore.addEventListener("mouseover", () => {
+            links.style.display = "flex";
+        });
+
+        links.addEventListener("mouseleave", () => {
+            links.style.display = "none";
+        });
+    }
+    profile()
+    </script>
 </body>
 
 </html>
+<%
+}
+else{
+    response.sendRedirect("../index.jsp");
+}
+%>
