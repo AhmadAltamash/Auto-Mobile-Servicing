@@ -23,7 +23,7 @@
                 <a href="#about-us">about us</a>
                 <a href="./JSP/login_register.jsp">register/login</a>
                 <a href="#page4">Contact us</a>
-                <a href="./admin/index.jsp">Admin Login</a>
+                <a href="./admin/login.jsp">Admin Login</a>
             </div>
             <span class="icons">
                 <i class="ri-menu-fold-line menu"></i>
