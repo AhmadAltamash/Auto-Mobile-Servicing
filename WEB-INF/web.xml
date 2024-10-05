@@ -7,7 +7,7 @@
 
 <resource>
     jdbc/postgres
-    jdbc:postgresql://<RAILWAY_POSTGRESQL_URL>:<PORT>/<DB_NAME>
-    <USERNAME>
-    <PASSWORD>
+    jdbc:postgresql://postgresql://postgres:hBRlBwzOrzMZqsKyqizyqTbHPswXrqyO@postgres.railway.internal:5432/railway:5432/railway
+    postgres
+    hBRlBwzOrzMZqsKyqizyqTbHPswXrqyO
 </resource>

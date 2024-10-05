@@ -5,8 +5,8 @@
               maxTotal="100" 
               maxIdle="30" 
               maxWaitMillis="10000"
-              username="<USERNAME>"
-              password="<PASSWORD>"
+              username="postgres"
+              password="hBRlBwzOrzMZqsKyqizyqTbHPswXrqyO"
               driverClassName="org.postgresql.Driver"
-              url="jdbc:postgresql://<RAILWAY_POSTGRESQL_URL>:<PORT>/<DB_NAME>"/>
+              url="jdbc:postgresql://postgresql://postgres:hBRlBwzOrzMZqsKyqizyqTbHPswXrqyO@postgres.railway.internal:5432/railway:5432/railway"/>
 </Context>
