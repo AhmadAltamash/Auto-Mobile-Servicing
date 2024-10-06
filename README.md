@@ -48,13 +48,7 @@ To run the project locally, follow these steps:
   ```bash
   /src/main/webapp/WEB-INF/config.properties
 Example configuration:
-  ```bash
-  db.url=jdbc:postgresql://localhost:5432/your_database
-  db.username=your_username
-  db.password=your_password
-
-## Usage
-- **Homepage:** Users can explore the available services for both two-wheelers and four-wheelers.
-- **Book a Service:** After logging in, users can schedule service appointments.
-- **View Service History:** Registered users can track their service history.
-- **Membership Plans:** Information on membership plans is available for frequent users.
+```bash
+db.url=jdbc:postgresql://localhost:5432/your_database
+db.username=your_username
+db.password=your_password
