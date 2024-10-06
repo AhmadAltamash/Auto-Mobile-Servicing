@@ -65,6 +65,8 @@
                                     <th>Customer Name</th>
                                     <th>Plan Name</th>
                                     <th>Plan Price</th>
+                                    <th>Purchased On</th>
+                                    <th>Validity Till</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
@@ -83,8 +85,14 @@
                                     <td><%= rs.getString("cust_name") %></td>
                                     <td><%= rs.getString("plan_name") %></td>
                                     <td><%= rs.getString("price") %></td>
+                                    <td><%= rs.getString("valid_from") %></td>
+                                    <td><%= rs.getString("valid_to") %></td>
                                     <td>
-                                    <a style="text-decoration:none" href='../JSP/action.jsp?cpid=<%= rs.getInt("cpid") %>&custid=<%= rs.getInt("cust_id") %>&action=deleteSubscribedPlans' onclick="return(confirm('Are you sure want to expire this plan?'))"><button class="expireButton">Expire</button></a>
+                                        <% if(rs.getInt("status") == 1) {%>
+                                        <a href='../JSP/action.jsp?cpid=<%= rs.getInt("cpid") %>&custid=<%= rs.getInt("cust_id") %>&action=expireSubscribedPlan'><button class='activeButton'>Active</button></a>
+                                        <% }else if(rs.getInt("status") == 2) {%>
+                                        <button class='expireButton'>Expired</button></a>
+                                        <% } %>
                                     </td>
                                 </tr> 
                                 <%

@@ -57,7 +57,7 @@
         <div id="parentBooking">
                 <div class="bookServices container-register">
 
-                    <form class="form" method="post" action="../JSP/action.jsp">
+                    <form class="form" method="post" action="action.jsp">
                     <input type="hidden" name="action" value="purchasePlan">
                     <p class="title">Subscribe for Plan</p>
                    
