@@ -61,8 +61,6 @@
                                     <th>Plan ID</th>
                                     <th>Plan Name</th>
                                     <th>Plan Charge</th>
-                                    <th>Valid-From-Date</th>
-                                    <th>Valid-To-Date</th>
                                     <th>Discount</th>
                                     <th>Total</th>
                                     <th>Edit</th>
@@ -81,8 +79,6 @@
                                     <td><%= sr %></td>
                                     <td><%= rs.getString("plan_name") %></td>
                                     <td><%= rs.getString("plan_charge") %></td>
-                                    <td><%= rs.getString("valid_from_date") %></td>
-                                    <td><%= rs.getString("valid_to_date") %></td>
                                     <td><%= rs.getString("discount") %></td>
                                     <td><%= rs.getString("total") %></td>
                                     <td>
@@ -117,15 +113,6 @@
                             <span>Plan Charge</span>
                         </label>
                     </div>  
-
-                    <label>
-                        <input required="" placeholder="none" type="date" class="input" name="valid_date">
-                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid From Date</span>
-                    </label>
-                    <label>
-                        <input required="" placeholder="" type="date" class="input" name="to_date" >
-                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid To Date</span>
-                    </label>
                     
                     <label>
                         <input required="" placeholder="" type="text" class="input" name="disc" id="disc">
