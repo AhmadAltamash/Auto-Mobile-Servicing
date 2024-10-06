@@ -8,5 +8,5 @@
               username="postgres"
               password="hBRlBwzOrzMZqsKyqizyqTbHPswXrqyO"
               driverClassName="org.postgresql.Driver"
-              url="jdbc:postgresql://postgresql://postgres:hBRlBwzOrzMZqsKyqizyqTbHPswXrqyO@postgres.railway.internal:5432/railway:5432/railway"/>
+                url="jdbc:postgresql://postgres.railway.internal:5432/railway"/>
 </Context>
