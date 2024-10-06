@@ -7,5 +7,5 @@
 %>
 <%
     Class.forName("org.postgresql.Driver");
-    con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/automobileDB","postgres","7488");
+    con = DriverManager.getConnection("jdbc:postgresql://postgresql://postgres:hBRlBwzOrzMZqsKyqizyqTbHPswXrqyO@postgres.railway.internal:5432/railway:5432/railway","postgres","hBRlBwzOrzMZqsKyqizyqTbHPswXrqyO");
 %>
