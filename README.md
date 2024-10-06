@@ -48,7 +48,37 @@ To run the project locally, follow these steps:
   ```bash
   /src/main/webapp/WEB-INF/config.properties
 Example configuration:
-```bash
+   ```bash
 db.url=jdbc:postgresql://localhost:5432/your_database
 db.username=your_username
 db.password=your_password
+```
+
+## Usage
+- **Homepage:** Users can explore the available services for both two-wheelers and four-wheelers.
+- **Book a Service:** After logging in, users can schedule service appointments.
+- **View Service History:** Registered users can track their service history.
+- **Membership Plans:** Information on membership plans is available for frequent users.
+
+## Future Enhancements
+- **Payment Gateway:** Enable users to pay for services directly through the app.
+- **Admin Dashboard:** Develop a simple and interactive admin dashboard to manage services and view analytics.
+- **Notifications:** Implement SMS or email notifications for booking confirmations and reminders.
+- **Ratings and Reviews:** Allow users to rate and review services for better feedback.
+
+## Screenshots
+
+## Contributing
+Contributions are welcome! Please fork this repository and submit a pull request with your suggested changes.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+```bash
+
+### Key Updates:
+- Added the **Railway.app** deployment link since your project is already live.
+- Updated the tech stack and deployment instructions to reflect PostgreSQL and Railway.
+- Incorporated membership plans, admin dashboard potential, and other features you've mentioned.
+
+Let me know if this looks good or if you'd like any further adjustments!
+```
