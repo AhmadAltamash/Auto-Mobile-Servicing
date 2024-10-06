@@ -1,12 +1,14 @@
-# Use Tomcat base image
-FROM tomcat:9.0-jdk11-adoptopenjdk-hotspot
+# Use the official Tomcat image from Docker Hub
+FROM tomcat:9.0
 
-# Copy your project into the webapps directory of Tomcat
+# Remove the default ROOT webapp from Tomcat
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
+
+# Copy your project files into the ROOT directory of Tomcat
 COPY ./ /usr/local/tomcat/webapps/ROOT/
 
-# Expose the default Tomcat port
+# Expose the port Railway will use (default: 8080)
 EXPOSE 8080
 
 # Start Tomcat server
 CMD ["catalina.sh", "run"]
-
