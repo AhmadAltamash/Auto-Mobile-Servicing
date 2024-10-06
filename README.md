@@ -66,9 +66,6 @@ db.password=your_password
 - **Notifications:** Implement SMS or email notifications for booking confirmations and reminders.
 - **Ratings and Reviews:** Allow users to rate and review services for better feedback.
 
-## Screenshots
-![Uploading adminHome.png…]()
-
 ## Contributing
 Contributions are welcome! Please fork this repository and submit a pull request with your suggested changes.
 
