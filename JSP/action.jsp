@@ -241,15 +241,13 @@
         String p_name,p_charge,valdate,todate,discount,calc;
         p_name = request.getParameter("pname");
         p_charge = request.getParameter("pcharge");
-        valdate = request.getParameter("valid_date");
-        todate = request.getParameter("to_date");
         discount = request.getParameter("disc");
         calc = request.getParameter("total");
 
         try{
             stmt = con.createStatement();
-            stmt.execute("insert into plans(plan_name,plan_charge,valid_from_date,valid_to_date,discount,total) values('"+p_name+"','"+p_charge+"','"+valdate+"','"+todate+"','"+discount+"','"+calc+"')");
-            msg="";
+            stmt.execute("insert into plans(plan_name,plan_charge,discount,total) values('"+p_name+"','"+p_charge+"','"+discount+"','"+calc+"')");
+            msg="Added";
             response.sendRedirect("../admin/addPlans.jsp?msg="+msg);
         }
         catch(Exception e){
@@ -270,14 +268,12 @@
 
         p_name = request.getParameter("pname");
         p_charge = request.getParameter("pcharge");
-        valdate = request.getParameter("valid_date");
-        todate = request.getParameter("to_date");
         discount = request.getParameter("disc");
         calc = request.getParameter("total");
 
         try{
             stmt = con.createStatement();
-            stmt.execute("update plans set plan_name='"+p_name+"',plan_charge='"+p_charge+"',valid_from_date='"+valdate+"',valid_to_date='"+todate+"',discount='"+discount+"',total='"+calc+"' where pid='"+pid_edit+"'");
+            stmt.execute("update plans set plan_name='"+p_name+"',plan_charge='"+p_charge+"',discount='"+discount+"',total='"+calc+"' where pid='"+pid_edit+"'");
             msg="Edit successful";
             response.sendRedirect("../admin/addPlans.jsp?msg="+msg);
         }
