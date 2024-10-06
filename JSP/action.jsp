@@ -542,7 +542,7 @@
         }
     }
 %>
-<%-- Unsubscribing Plans By admin --%>
+<%-- expiring Plans By admin --%>
 <%
     if(action.equals("expireSubscribedPlan")){
         int cpID, custID;
@@ -552,6 +552,27 @@
         try{
             stmt = con.createStatement();
             stmt.execute("update customers_plan set status = 2 where cpid='"+cpID+"' AND cust_id = '"+custID+"'");
+            msg="Updated successful";
+            response.sendRedirect("../admin/planManagement.jsp?msg="+msg);
+        }
+        catch(Exception e){
+            msg="Updation Failed"+e.toString();
+        }    
+        finally{
+            con.close();
+        }
+    }
+%>
+<%-- Unsubscribing Plans By admin --%>
+<%
+    if(action.equals("deleteSubscribedPlan")){
+        int cpID, custID;
+        cpID = Integer.parseInt(request.getParameter("cpid"));
+        custID = Integer.parseInt(request.getParameter("custid"));
+
+        try{
+            stmt = con.createStatement();
+            stmt.execute("delete from customers_plan where cpid='"+cpID+"' AND cust_id = '"+custID+"'");
             msg="Updated successful";
             response.sendRedirect("../admin/planManagement.jsp?msg="+msg);
         }

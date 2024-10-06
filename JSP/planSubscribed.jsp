@@ -55,7 +55,7 @@
             <h1 class="headPlan">Subscribed Plan</h1>
             <%
                 stmt = con.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM customers_plan WHERE cust_id = '" + Cid + "'");
+                rs = stmt.executeQuery("SELECT * FROM customers_plan WHERE cust_id = '" + Cid + "' AND status = 1");
 
                 if (rs.next()) { 
                     int planId = rs.getInt("cpid");
