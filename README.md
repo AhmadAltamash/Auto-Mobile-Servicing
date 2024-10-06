@@ -16,5 +16,5 @@
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** JSP (Java Server Pages)
 - **Database:** PostgreSQL/Oracle (adaptable based on the environment)
-- **Hosting:** Deployed on Heroku
+- **Hosting:** Deployed on Railway.app
 - **Version Control:** Git & GitHub
