@@ -15,6 +15,6 @@
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** JSP (Java Server Pages)
-- **Database:** PostgreSQL/Oracle (adaptable based on the environment)
+- **Database:** PostgreSQL
 - **Hosting:** Deployed on Railway.app
 - **Version Control:** Git & GitHub
