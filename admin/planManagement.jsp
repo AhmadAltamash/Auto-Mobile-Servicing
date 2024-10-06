@@ -68,6 +68,7 @@
                                     <th>Purchased On</th>
                                     <th>Validity Till</th>
                                     <th>Status</th>
+                                    <th>Remove</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -92,6 +93,11 @@
                                         <a href='../JSP/action.jsp?cpid=<%= rs.getInt("cpid") %>&custid=<%= rs.getInt("cust_id") %>&action=expireSubscribedPlan'><button class='activeButton'>Active</button></a>
                                         <% }else if(rs.getInt("status") == 2) {%>
                                         <button class='expireButton'>Expired</button></a>
+                                        <% } %>
+                                    </td>
+                                    <td>
+                                        <% if(rs.getInt("status") == 2) {%>
+                                        <a href='../JSP/action.jsp?cpid=<%= rs.getInt("cpid") %>&custid=<%= rs.getInt("cust_id") %>&action=deleteSubscribedPlan'><button class='deleteButton'>Remove</button></a>
                                         <% } %>
                                     </td>
                                 </tr> 
