@@ -84,7 +84,22 @@ function bgclick(){
         })
     })
 }
+function loader() {
+    let loader = document.querySelector('.terminal-parent');
+    loader.style.bottom = '100%'; 
+    setTimeout(() => {
+        loader.style.display = 'none'; 
+        document.body.classList.remove('no-scroll'); 
+    }, 1000);
+}
 
-bgclick()
+window.onload = () => {
+    document.body.classList.add('no-scroll');
+    setTimeout(() => {
+        loader();
+    }, 1000);
+}
+
 slider()
+bgclick()
 navBar()
