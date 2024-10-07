@@ -13,6 +13,21 @@
     <title>TorqueMaster Garage - A place where we ensure your vehicles value</title>
 </head>
 <body>
+    <div class="terminal-parent">
+        <div class="terminal-loader">
+            <div class="terminal-header">
+                <div class="terminal-title">Status</div>
+                <div class="terminal-controls">
+                    <div class="control exit"></div>
+                    <div class="control minimize"></div>
+                    <div class="control maximize"></div>
+                </div>
+            </div>
+            <div class="text">Loading...</div>
+        </div>
+    </div>
+
+
         <nav>
             <a href="index.jsp" class="logo"><img src="./Media//Red_Car_Tire_Transportation_Free_Logo-removebg.png" alt=""></a>
         </nav>
@@ -236,6 +251,7 @@
 
         </main>
 
+    
     <!-- Script -->
     <script src="./JS/script.js"></script>
 </body>
