@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../CSS/login-register.css">
     <link rel="stylesheet" href="../CSS/user.css">
     <title>
-        TorqueMaster Garage — A place where we ensure your vehicles value
+        Services
     </title>
 </head>
 

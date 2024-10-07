@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../CSS/plan.css">
     <link rel="stylesheet" href="../CSS/user.css">
     <title>
-        Plans
+        Subscribed Plan
     </title>
 </head>
 
