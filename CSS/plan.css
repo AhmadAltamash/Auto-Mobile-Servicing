@@ -3,15 +3,32 @@
     padding: 0;
     box-sizing:border-box;
 }
+*::selection{
+    background-color: #fff;
+    color: #000;
+}
 html,body{
     height:100vh;
     width:100%;
 }
 body{
+    
     background-image: radial-gradient(
         #8b8b8b, #1d252e
     ); 
     font-family: "Space Grotesk";
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    width: 8px;
+    background: #000;
+    border-radius: 20px;
+}
+body::-webkit-scrollbar-thumb{
+    width: 3px;
+    border-radius: 20px;
+    background: #fff;
+    cursor: grabbing;
 }
 nav{
     position: absolute;
