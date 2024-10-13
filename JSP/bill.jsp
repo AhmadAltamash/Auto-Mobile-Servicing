@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
     <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="stylesheet" href="../CSS/HomePageResponsive.css">
+
     <title>
         Invoice & Bills
     </title>

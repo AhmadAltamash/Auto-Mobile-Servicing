@@ -20,8 +20,9 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../CSS/plan.css">
     <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="stylesheet" href="../CSS/HomePageResponsive.css">
     <title>
-        Subscribed Plan
+        Plans
     </title>
 </head>
 
@@ -292,7 +293,7 @@
                             <li>Priority service</li>
                         </ul>
                     </div>
-                    <a style="text-decoration:none" href='planPurchase.jsp?bid=<%= rs.getInt("pid") %>'><button class="button-pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
+                    <a style="text-decoration:none" href='planPurchase.jsp?bid=<%= rs.getInt("pid") %>'><button class="button-pro pro-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
                 </div>
             </div>
             <div class="silver">
@@ -343,7 +344,7 @@
                             <li>Complimentary vehicle inspection</li>
                         </ul>
                     </div>
-                    <a style="text-decoration:none" href='planPurchase.jsp?bid=<%= rs.getInt("pid") %>'><button class="button-pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
+                    <a style="text-decoration:none" href='planPurchase.jsp?bid=<%= rs.getInt("pid") %>'><button class="button-pro pro-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
                 </div>
             </div>
             
@@ -399,7 +400,7 @@
                             <li>Complimentary annual detailing</li>
                         </ul>
                     </div>
-                    <a style="text-decoration:none" href='planPurchase.jsp?bid=<%= rs.getInt("pid") %>'><button class="button-pro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
+                    <a style="text-decoration:none" href='planPurchase.jsp?bid=<%= rs.getInt("pid") %>'><button class="button-pro pro-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>Unlock Pro</button></a>
                 </div>
             </div>
             </div> 

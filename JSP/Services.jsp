@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/login-register.css">
     <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="stylesheet" href="../CSS/HomePageResponsive.css">
     <title>
-        Services
+        TorqueMaster Garage — A place where we ensure your vehicles value
     </title>
 </head>
 
@@ -34,7 +35,7 @@
             </span>
         </div>
 
-    <main class="main">
+    <main class="servicesMain">
             <div class="multiple-links">
                 <a href="users.jsp">Edit Profile</a>
                 <a href="#" class="activated">Services</a>

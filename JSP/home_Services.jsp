@@ -11,9 +11,10 @@
     <link rel="shortcut icon" href="../Media/favicon.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/HomePageResponsive.css">
     <link rel="stylesheet" href="../CSS/login-register.css">
     <title>
-        Services
+        TorqueMaster Garage — A place where we ensure your vehicles value
     </title>
 </head>
 

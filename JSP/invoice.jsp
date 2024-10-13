@@ -19,6 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/invoice.css">
+    <link rel="stylesheet" href="../CSS/HomePageResponsive.css">
     <title>
         Invoice & Bills
     </title>
@@ -39,6 +40,7 @@
 <body>
 
     <main id="invoiceMain">
+
         <div id="bill">
 
             <div class="invoiceHeading">
