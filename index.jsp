@@ -142,7 +142,6 @@
                     count++; // Increment the counter for the next card
                     }
                     %>
-                <a href="./JSP/Plans.jsp">See Details...</a>
                 </div>
 
                  
