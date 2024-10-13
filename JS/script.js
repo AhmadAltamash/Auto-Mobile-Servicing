@@ -2,12 +2,14 @@ function navBar(){
     let menu = document.querySelector(".menu")
 let close = document.querySelector(".close")
 let navContent = document.querySelectorAll(".nav-content a")
+let parentNav = document.querySelector(".parent-nav")
 menu.addEventListener("click", ()=>{
     navContent.forEach(item =>{
         item.style.display = "flex";
     })
     menu.style.display = "none";
     close.style.display = "block"
+    parentNav.style.paddingTop = ".7em"
 })
 close.addEventListener("click", ()=>{
     navContent.forEach(item =>{
