@@ -1,7 +1,7 @@
 @media screen and (max-width:380px){
     
     .terminal-parent{
-        height: 80vh;
+        height: 39.625rem;
     }
     nav{
         padding: 1em 1.5em;
@@ -62,7 +62,7 @@
         height: 45vh;
     }
     .slider{
-        margin-top: 1.2em;
+        margin-top: 1.7em;
     }
     .slider .list .item img{
         height: 12.5em;
@@ -220,7 +220,7 @@
         font-size: 1.5em;
     }
     #about-us p{
-        font-size: .5rem;
+        font-size: .8rem;
     }
     .about-img{
         display: none;
@@ -229,11 +229,12 @@
         display: none;
     }
     #page4{
-        height: 36vh;
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: start;
         position: relative;
+        margin-bottom: 1em;
     }
     #page4 #contact-inner{
         position: static;
@@ -272,7 +273,7 @@
        height: auto;
     }
     footer{
-        height: 65vh;
+        height: auto;
         padding: 1.5em 1.5em;
         display:flex;
         flex-direction: column;
