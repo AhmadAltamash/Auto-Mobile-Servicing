@@ -1,5 +1,5 @@
-@media screen and (max-width:380px){
-    
+@media screen and (max-width:700px){
+    /* Home Page */
     .terminal-parent{
         height: 39.625rem;
     }
@@ -26,37 +26,12 @@
         gap: 1em;
         width: max-content;
         height: max-content;
-        transition: display ease 0.5s;
-        border-radius: 15px;
+        background: #00000059;
+        border-radius: 10px;
+        padding: .05em;
     }
     .parent-nav .nav-content a{
         font-size: .9em;
-        font-weight: 500;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: none;
-        transition: display ease 0.5s;
-        position: relative;
-        z-index: 99;
-        overflow: hidden;
-        padding: 0.5em;
-        border-radius: 10px;
-    }
-    .nav-content .activated{
-        background: #ffffffd6;
-        color: #000;
-    }
-    .nav-content a::before{
-        content: "";
-        position: absolute;
-        z-index: -90;
-        width: 0px;
-        height: 0px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        transition: width 0.6s, height 0.6s;
     }
     #page1{
         height: 45vh;
@@ -74,7 +49,7 @@
 
     .banner-content{
         position: absolute;
-        bottom: 28%;
+        bottom: 18%;
         left: 15%;
         z-index: 99;
     }
@@ -104,7 +79,7 @@
     }
     .dots{
         position: absolute;
-        bottom: 20%;
+        bottom: 7%;
         left: 0%;
         color: #ffffff83;
         width: 100%;
@@ -333,5 +308,154 @@
         background: #000;
         border-radius: 50%;
         font-size: 1.5rem;
+    } /* Till Here */
+
+    /* Home Services */
+    .servicesMain #parent-row{
+        padding-top: 5em;
     }
+    .servicesMain #parent-row h1{
+        font-size: 1.5em;
+    }
+    /* Till Here */
+    /* Plans */
+    .mainPlan{
+        height: auto;
+    }
+    .plans-card{
+        height: auto;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        padding-top: 6em;
+    }
+    .silver{
+        width: 16em;
+        height: 30rem;
+        transform: rotate(0deg);
+        position: static;
+    }
+    .gold{
+        width: 16em;
+        height: 30rem;
+        transform: rotate(0deg);
+        position: static;
+    }
+    .platinum{
+        width: 16em;
+        height: 30rem;
+        transform: rotate(0deg);
+        position: static;
+    }
+    .plan-heading h1{
+        font-size: 1.2rem;
+    }
+    .plan-heading p{
+        font-size: .6rem;
+    }
+    .plan-content>p{
+        font-size: .8rem;
+    }
+    .plans-card .details{
+        height: 17rem;
+    }
+    .details .list-details{
+      padding-top: 1rem;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .details .list-details ul{
+      padding: 0rem .5rem 0rem .5rem;
+    }
+    .details .list-details ul:nth-child(1){
+      padding: 0rem 2rem 0rem .5rem;
+    }
+    .details .list-details ul li{
+      font-size: .6rem;
+    }
+    .platinum .list-details{
+        padding-top: 0rem;
+    }
+    .platinum .list-details ul li{
+        font-size: .5rem;
+    }
+    .pro-button{
+        position: absolute;
+        bottom: 3%;
+    }
+    .planSubscribed{
+        padding-top: 7em;
+        height: 18em;
+    }
+    .planSubscribed .headPlan{
+        font-size: 1.5em;
+    }
+    .planSubscribed .plansPara{
+        font-size: .95em;
+    }
+    .planSubscribed .plansPara strong{
+        font-size: 1rem;
+    }
+    /* Till Here */
+    /* Login-Register */
+    .container-login .form .btn {
+        width: 10em;
+    }
+    .demoId{
+        bottom: 15%;
+        right: 40%;
+    }
+    /* Till Here */
+    /* User's Homepage */
+    .multiple-links{
+        position: fixed;
+        z-index: 99;
+        background: #00000059;
+        height: max-content;
+        width: max-content;
+        right: 24.5%;
+        top: 5%;
+    }
+    .multiple-links a{
+        font-size: .9em;
+    }
+    /* Till here */
+    /* Tables */
+    table tr, td{
+        font-size: .8em;
+    }
+    td:not(:first-of-type){
+        min-width: 6rem;
+    }
+    /* Till here */
+    /* Invoice */
+    #invoiceMain{
+        flex-direction: column;
+    }
+    #bill{
+        width: 80%;
+    }
+    .invoiceFooter h2{
+        font-size: 1.5em;
+    }
+    .invoiceFooter h3{
+        font-size: 1em;
+    }
+    .invoiceFooter p{
+        font-size: .6rem;
+    }
+    /* Till here */
+    /* Notification */
+    .notify {
+        position: absolute;
+        right: 8.5%;
+        top: 13%;
+    }
+    /* Till here */
 }
