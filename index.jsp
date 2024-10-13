@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="./Media/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/HomePageResponsive.css">
     <title>TorqueMaster Garage - A place where we ensure your vehicles value</title>
 </head>
 <body>
@@ -129,7 +130,7 @@
 
                     <div class="card_box card-<%= count %>"> <!-- Adding unique class based on the counter -->
                         <span></span>
-                        <div class="card-details">
+                        <div class="card-box-details">
                             <p class="text-body">Price <%= rs.getInt("plan_charge") %></p>
                             <p>Discount <%= rs.getInt("discount") %>%</p>
                             <p>Total Price <%= rs.getInt("total") %></p>
@@ -241,9 +242,9 @@
 
                     <div class="social-links">
                         <div class="social">
-                            <a href="#"><i class="ri-instagram-line"></i></a>
-                            <a href="#"><i class="ri-github-fill"></i></a>
-                            <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+                            <a href="https://www.instagram.com"><i class="ri-instagram-line"></i></a>
+                            <a href="https://www.github.com"><i class="ri-github-fill"></i></a>
+                            <a href="https://www.linkedin.com"><i class="ri-linkedin-box-fill"></i></a>
                         </div>
                     </div>
                 </div>
