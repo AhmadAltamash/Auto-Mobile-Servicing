@@ -48,19 +48,17 @@ document.getElementById("dateInput").addEventListener("change", function() {
 
 function navBar(){
     let menu = document.querySelector(".menu")
-let close = document.querySelector(".close")
-let navContent = document.querySelectorAll(".nav-content a")
+    let close = document.querySelector(".close")
+    let nav_Content = document.querySelector(".nav-content")
+    let parentNav = document.querySelector(".parent-nav")
 menu.addEventListener("click", ()=>{
-    navContent.forEach(item =>{
-        item.style.display = "flex";
-    })
+    nav_Content.style.display = "flex"
     menu.style.display = "none";
     close.style.display = "block"
+    parentNav.style.paddingTop = ".6em"
 })
 close.addEventListener("click", ()=>{
-    navContent.forEach(item =>{
-        item.style.display = "none";
-    })
+    nav_Content.style.display = "none"
     menu.style.display = "block";
     close.style.display = "none"
 })
