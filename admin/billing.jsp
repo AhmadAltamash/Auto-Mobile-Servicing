@@ -21,6 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="stylesheet" href="../CSS/AdminResponsive.css">
     <title>
         Make & Print Bills
     </title>
@@ -44,7 +45,7 @@
 
     <main class="main">
         
-        <div class="multiple-links" style="height:29em; right:10%">
+        <div class="multiple-links">
             <a href="profile.jsp">Edit Profile</a>
             <a href="addPlans.jsp">Add Plans</a>
             <a href="addServices.jsp">Add Services</a>

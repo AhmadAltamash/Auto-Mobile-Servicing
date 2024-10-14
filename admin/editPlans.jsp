@@ -22,6 +22,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="stylesheet" href="../CSS/AdminResponsive.css">
     <title>
         Edit Plans
     </title>
@@ -33,8 +34,8 @@
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
-                <a href="../index.html">home</a>
-                <a href="index.jsp" target="_blank" class="activated">Admin Login</a>
+                <a href="welcomeadmin.jsp">home</a>
+                <a href="addPlans.jsp">Add Plans</a>
             </div>
             <span class="icons">
                 <i class="ri-menu-fold-line menu"></i>
@@ -66,15 +67,6 @@
                             <span>Plan Charge</span>
                         </label>
                     </div>  
-
-                    <label>
-                        <input required="" type="date" class="input" name="valid_date" value="<% out.println(rs.getString("valid_from_date"));%>">
-                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid From Date</span>
-                    </label>
-                    <label>
-                        <input required="" type="date" class="input" name="to_date" value="<% out.println(rs.getString("valid_to_date"));%>">
-                        <span style="top:30px;font-size: 0.7em;font-weight: 600;color: green;">Valid To Date</span>
-                    </label>
 
                     <label>
                         <input required="" placeholder="" type="text" class="input" name="disc" id="disc" value="<% out.println(rs.getString("discount"));%>">
@@ -120,6 +112,23 @@
             }
         }
         cal()
+        function navBar(){
+            let menu = document.querySelector(".menu")
+            let close = document.querySelector(".close")
+            let nav_Content = document.querySelector(".nav-content")
+        menu.addEventListener("click", ()=>{
+            nav_Content.style.display = "flex"
+            menu.style.display = "none";
+            close.style.display = "block"
+            parentNav.style.paddingTop = ".6em"
+        })
+        close.addEventListener("click", ()=>{
+            nav_Content.style.display = "none"
+            menu.style.display = "block";
+            close.style.display = "none"
+        })
+        }
+        navBar()
     </script>
 </body>
 

@@ -22,6 +22,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="stylesheet" href="../CSS/AdminResponsive.css">
     <title>
         Edit Services
     </title>
@@ -33,8 +34,8 @@
         </nav>
         <div class="parent-nav">            
             <div class="nav-content">
-                <a href="../index.html">home</a>
-                <a href="index.jsp" target="_blank" class="activated">Admin Login</a>
+                <a href="welcomeadmin.jsp">Home</a>
+                <a href="addServices.jsp">Add Services</a>
             </div>
             <span class="icons">
                 <i class="ri-menu-fold-line menu"></i>
@@ -111,6 +112,23 @@
         }
         }
         cal()
+        function navBar(){
+            let menu = document.querySelector(".menu")
+            let close = document.querySelector(".close")
+            let nav_Content = document.querySelector(".nav-content")
+        menu.addEventListener("click", ()=>{
+            nav_Content.style.display = "flex"
+            menu.style.display = "none";
+            close.style.display = "block"
+            parentNav.style.paddingTop = ".6em"
+        })
+        close.addEventListener("click", ()=>{
+            nav_Content.style.display = "none"
+            menu.style.display = "block";
+            close.style.display = "none"
+        })
+        }
+        navBar()
     </script>
 </body>
 

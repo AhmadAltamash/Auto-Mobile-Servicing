@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="stylesheet" href="../CSS/AdminResponsive.css">
 
 
     <title>Add or Edit Plans</title>
@@ -34,7 +35,7 @@
 
     <%@include file="../JSP/connect.jsp" %>
         <main>
-            <div class="multiple-links" style="right:9.8%">
+            <div class="multiple-links">
                 <a href="profile.jsp">Edit Profile</a>
                 <a href="#" class="activated">Add Plans</a>
                 <a href="addServices.jsp">Add Services</a>
