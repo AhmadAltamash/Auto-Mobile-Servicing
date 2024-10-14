@@ -22,7 +22,6 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 1vw 3vw;
-    
 }
 nav .logo{
     height: 80px;
@@ -41,7 +40,6 @@ nav .logo img{
     right: 0%;
     height: max-content;
     padding: 1.5vw 3vw;
-    color: #fff;
 }
 .parent-nav .icons .close{
     display: none;
@@ -63,7 +61,7 @@ nav .logo img{
     font-weight: 600;
 }
 .parent-nav .nav-content{
-    display: flex;
+    display: none;
     gap: 3em;
     align-items: center;
     width: max-content;
@@ -75,7 +73,7 @@ nav .logo img{
     font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
-    display: none;
+    display: flex;
     transition: display ease 0.5s;
     position: relative;
     z-index: 99;

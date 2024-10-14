@@ -1,0 +1,93 @@
+@media screen and (max-width:700px){
+    /* Home Page */
+    nav{
+        padding: 1em 1.5em;
+    }
+    nav .logo{
+        height: 50px;
+        position: relative;
+    }
+    .parent-nav{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: end;
+        position: fixed;
+        z-index: 99;
+        right: 0%;
+        height: max-content;
+        padding: 1.5em 1.5em;
+    }
+    .parent-nav .nav-content{
+        display: none;
+        flex-direction: column;
+        gap: 1em;
+        width: max-content;
+        height: max-content;
+        background: #00000059;
+        border-radius: 10px;
+        padding: 1em;
+    }
+    .parent-nav .nav-content a{
+        font-size: .8em;
+    }
+    .multiple-links{
+        position: fixed;
+        z-index: 99;
+        background: #00000059;
+        height: max-content;
+        width: max-content;
+        right: 33%;
+        top: 9.5%;
+    }
+    .multiple-links a{
+        font-size: .8em;
+    }
+    /* Till here */
+    /* homepage */
+    .page1 h1{
+        font-size: 2.5rem;
+    }
+    .page1 h1:nth-child(1):before{
+        top: -1.4%;
+        left: 7%;
+    }
+    .page1 h2{
+        font-size: 3em;
+      }
+    /* till here */
+    /* Add Plan & Services */
+    .addPage{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .addService{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    /* Till here */
+    /* Tables */
+    table tr, td{
+        font-size: .8em;
+    }
+    td:not(:first-of-type){
+        min-width: 6rem;
+    }
+    /* Till here */
+    /* Invoice */
+    #invoiceMain{
+        flex-direction: column;
+    }
+    #bill{
+        width: 80%;
+    }
+    .invoiceFooter h2{
+        font-size: 1.5em;
+    }
+    .invoiceFooter h3{
+        font-size: 1em;
+    }
+    .invoiceFooter p{
+        font-size: .6rem;
+    }
+    /* Till here */
+}
