@@ -209,3 +209,28 @@ tbody tr:hover {
         display: none;
     }
 }
+@media screen and (max-width: 768px) {
+  #bill {
+      width: 90%; /* Make the invoice take more screen width */
+      padding: 1em;
+      margin: 0 auto;
+  }
+
+  table {
+      font-size: 14px;
+  }
+
+  .details {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .invoiceFooter {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .invoiceHeading img {
+      width: 60px;
+  }
+}
