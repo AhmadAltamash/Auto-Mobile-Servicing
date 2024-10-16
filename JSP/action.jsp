@@ -568,7 +568,7 @@
 
         try{
             stmt = con.createStatement();
-            stmt.execute("delete from customers_plan where cpid='"+cpID+"' AND cust_id = '"+custID+"'");
+            stmt.execute("delete from customers_plan where status = 2 AND cpid='"+cpID+"' AND cust_id = '"+custID+"'");
             msg="Updated successful";
             response.sendRedirect("../admin/planManagement.jsp?msg="+msg);
         }
