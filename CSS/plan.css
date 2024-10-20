@@ -54,6 +54,7 @@ nav .logo img{
     padding: 0.5em;
     margin: 0.5rem;
     transition: background ease .5s;
+    color: #fff;
 }
 .parent-nav .icons i:hover{
     background: #fff;
